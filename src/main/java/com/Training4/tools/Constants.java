@@ -11,6 +11,9 @@ public final class Constants {
 	public static final String END_USER = "damaris.pop";
 	public static final String END_PASS = "damaris1";
 	
+	public static final String END_USER1 = "ralucamoroianu1";
+	public static final String END_PASS1 = "raluca23";
+	
 	public static final String PM_USER = "mihai.arsin";
 	public static final String PM_PASS = "mihaiarsin";
 
