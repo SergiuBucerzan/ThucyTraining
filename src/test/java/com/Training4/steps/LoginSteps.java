@@ -5,11 +5,12 @@ import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 import com.Training4.pages.LoginPage;
+import com.Training4.pages.MainMenuPage;
 
 public class LoginSteps extends ScenarioSteps {
-	//private static final long serialVersionUID = 1L;
-	//LoginPage dictionaryPage;
+
 	LoginPage loginPage;
+	MainMenuPage mainMenuPage;
 	
 	@Step
 	public void clickSignInBtn(){
@@ -26,38 +27,18 @@ public class LoginSteps extends ScenarioSteps {
 		loginPage.typePass(pass);
 	}
 	
+	@Step
+	public void go_to_vacation(){
+		mainMenuPage.clickVacationMenuItem();
+	}
+	
 	@StepGroup
-	public void login(String username, String password){
-		//getDriver().get("http://192.168.1.68:9090/login");
+	public void login_and_go_to_vacation(String username, String password){
 		loginPage.open();
 		typeUser(username);
 		typePass(password);
 		clickSignInBtn();
+		go_to_vacation();
 	}
 	
-//    @Step
-//    public void enters(String keyword) {
-//        dictionaryPage.enter_keywords(keyword);
-//    }
-//
-//    @Step
-//    public void starts_search() {
-//        dictionaryPage.lookup_terms();
-//    }
-//
-//    @Step
-//    public void should_see_definition(String definition) {
-//        assertThat(dictionaryPage.getDefinitions(), hasItem(containsString(definition)));
-//    }
-//
-//    @Step
-//    public void is_the_home_page() {
-//        dictionaryPage.open();
-//    }
-//
-//    @Step
-//    public void looks_for(String term) {
-//        enters(term);
-//        starts_search();
-//    }
 }

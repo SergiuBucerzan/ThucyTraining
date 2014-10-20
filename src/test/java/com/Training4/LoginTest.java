@@ -31,7 +31,7 @@ public class LoginTest {
     
     @Test
     public void successfull_login_test(){
-    	loginSteps.login(Constants.DM_USER, Constants.DM_PASS);
+    	loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
     	
     }
  

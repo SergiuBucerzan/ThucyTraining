@@ -31,7 +31,7 @@ public class EndUserTest {
     
     @Test
     public void create_vacation(){
-    	loginSteps.login(Constants.END_USER, Constants.END_PASS);
+    	loginSteps.login_and_go_to_vacation(Constants.END_USER, Constants.END_PASS);
     	
     }
  
