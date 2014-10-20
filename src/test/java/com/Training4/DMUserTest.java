@@ -18,7 +18,7 @@ import com.Training4.steps.LoginSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-public class LoginTest {
+public class DMUserTest {
     
 	@Managed(uniqueSession = true)
     public WebDriver webdriver;
