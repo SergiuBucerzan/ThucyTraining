@@ -52,4 +52,9 @@ public class NewVacationSteps extends ScenarioSteps {
 		newvacationpage.clickNewVacation();
 	}
 	
+	@Step
+	public String get_content_title(){
+		return newvacationpage.getContentTitle();
+	}
+	
 }
