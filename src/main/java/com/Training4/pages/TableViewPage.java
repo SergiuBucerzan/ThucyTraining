@@ -29,7 +29,7 @@ public class TableViewPage extends PageObject {
 	@FindBy(css = "span[class'aui_3_4_0_1_2665']")
 	private WebElement buildingsAll;
 	
-	@FindBy(css = )
+
 
 	public void clickTrackItem() {
 		element(trackItem).waitUntilVisible();
