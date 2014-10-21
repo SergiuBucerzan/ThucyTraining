@@ -7,7 +7,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 import com.Training4.pages.LoginPage;
 import com.Training4.pages.MainMenuPage;
 import com.Training4.pages.TableViewPage;
-
+import com.Training4.pages.TableViewPage;
 
 
 public class TableViewSteps extends ScenarioSteps {
@@ -45,8 +45,12 @@ public class TableViewSteps extends ScenarioSteps {
 	@Step
 	public void go_to_track(){
 		tableViewPage.clickTrackItem();
+	}
 	
-	
+	@Step
+	public void select_buildings_all(){
+		tableViewPage.clickBuildingsAll();
+		
 	}
 	
 	@Step

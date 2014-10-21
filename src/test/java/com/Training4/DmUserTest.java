@@ -36,13 +36,32 @@ public class DmUserTest {
     @Steps
     TableViewSteps tableViewSteps;
     
-    @Test
+//   @Test
     public void successfull_login_test(){
     	loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
-    	tableViewSteps.go_to_track();
-		tableViewSteps.verifyThatTableContainsElement("Name"); 
+    	
     }
     	  	
+//    @Test
+    public void go_to_track(){
+    	loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
+    	tableViewSteps.go_to_track();
+		
+    }
     
- 
+    @Test
+    public void verify_that_table_contains_element(){
+    	loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
+    	tableViewSteps.go_to_track();
+		tableViewSteps.verifyThatTableContainsElement("Raluca"); 
+		
+    }
+    
+    @Test
+    public void verify_buildings_all(){
+    	loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
+    	tableViewSteps.go_to_track();
+    	tableViewSteps.select_buildings_all();
+		tableViewSteps.verifyThatTableContainsElement("Raluca"); 
+    }	
 } 
