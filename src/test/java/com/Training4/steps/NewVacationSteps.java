@@ -78,4 +78,9 @@ public class NewVacationSteps extends ScenarioSteps {
 		public void goToSaveButton(){
 			butonul.clickSaveButton();
 		}
+	 
+	 @Step
+		public void goToCancelButton(){
+			butonul.clickCancelButton();
+		}
 }
