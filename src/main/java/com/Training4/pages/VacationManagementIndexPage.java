@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class VacationManagementIndexPage extends PageObject {
 
-	@FindBy(css="div[class='aui-column-content aui-column-content-first '] div:nth-child(3) ul li:nth-child(3) a")
+	@FindBy(css="a[href*='menuItem=inbox']")
 	private WebElement vacationManagementItem;
 	
 	

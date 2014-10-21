@@ -32,7 +32,7 @@ public class VacationManagementItemSteps {
     LoginSteps loginSteps;
 
     VacationManagementIndexPage vacationManagementIndexPage;
-    
+    @Step
 	public void clickVacationManagementItem() {
 		vacationManagementIndexPage.clickVacationManagementItem();
 		
