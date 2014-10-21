@@ -18,6 +18,8 @@ public class NewVacationPage extends PageObject {
 	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_saveButton")
 	private WebElementFacade saveButton;
 	
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_cancelButton")
+	private WebElementFacade cancelButton;
 	 
 	@FindBy(css="a[href*='menuItem=new-request']")
 	private WebElement newvacation;
@@ -96,4 +98,8 @@ public class NewVacationPage extends PageObject {
 		saveButton.click();
 	}
 	
+	public void clickCancelButton(){
+		element(cancelButton).waitUntilVisible();
+		cancelButton.click();
+	}
 }
