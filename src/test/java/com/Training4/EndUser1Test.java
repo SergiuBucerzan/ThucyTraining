@@ -44,9 +44,10 @@ public class EndUser1Test {
     @Steps
     NewVacationSteps buttonSave;
     
-   
+    @Steps
+    NewVacationSteps cancelSave;
     
-    @Test
+   // @Test
     public void create_vacations() throws ParseException{
 
     	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
@@ -59,6 +60,17 @@ public class EndUser1Test {
          buttonSave.goToSaveButton();
     }
    
-    
+    @Test
+    public void cancel_vacations() throws ParseException{
+
+    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
+    	newVacationSteps.goToNewVacation();
+    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+       
+       
+        newVacationRequestSteps.selectStartDate(1, 22, 2014);
+        newVacationRequestSteps.selectEndDate(1, 22, 2014);
+         cancelSave.goToSaveButton();
+    }
  
 } 
