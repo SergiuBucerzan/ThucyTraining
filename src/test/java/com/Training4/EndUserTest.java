@@ -35,14 +35,30 @@ public class EndUserTest {
     @Steps
     MyRequestSteps myRequestSteps;
     
+    @Steps
+    MyRequestSteps holiday;
+    
+    @Steps
+    MyRequestSteps onetofive;
+    
+    @Steps
+    MyRequestSteps approved;
+    
+    @Steps
+    MyRequestSteps apply;
+    
     @Test
     public void create_vacation(){
     	loginSteps.login_and_go_to_vacation(Constants.END_USER, Constants.END_PASS);
-    	myRequestSteps.go_to_MyRequestsPage();
+    	myRequestSteps.go_to_MyRequestPage();
+    	
     	
     	//Assert.assertEquals("Content title is not as expected!!!", myRequestSteps.get_content_title().contentEquals("Filters requests"));
     	Assert.assertEquals("Filter requests", myRequestSteps.get_content_title());
-    	
+    	holiday.select_Holiday();
+    	onetofive.select_OneToFive();
+    	approved.select_ApprovedStatus();
+    	apply.select_ApplyButton();
     }
  
 } 
