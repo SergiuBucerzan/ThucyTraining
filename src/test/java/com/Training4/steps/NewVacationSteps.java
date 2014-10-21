@@ -1,5 +1,7 @@
 package com.Training4.steps;
 
+import java.text.ParseException;
+
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
@@ -17,7 +19,8 @@ public class NewVacationSteps extends ScenarioSteps {
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
 	NewVacationPage newvacationpage;
-	
+	NewVacationPage butonul;
+	NewVacationPage newVacationRequestPage;
 	/*@Step
 	public void clickSignInBtn(){
 		loginPage.clickSignIn();
@@ -56,5 +59,28 @@ public class NewVacationSteps extends ScenarioSteps {
 	public String get_content_title(){
 		return newvacationpage.getContentTitle();
 	}
+
+	@Step
+	 public void selectStartDate(int month, int day, int year) throws ParseException
+	 {
+	  newVacationRequestPage.clickStartDateBox();
+	  newVacationRequestPage.setDate(month, day, year);
+	  
+	 }
 	
+	 public void selectEndDate(int month, int day, int year) throws ParseException {
+		  newVacationRequestPage.clickEndDateBox();
+		  newVacationRequestPage.setDate(month, day, year);
+		  
+		 }
+	
+	 @Step
+		public void goToSaveButton(){
+			butonul.clickSaveButton();
+		}
+	 
+	 @Step
+		public void goToCancelButton(){
+			butonul.clickCancelButton();
+		}
 }

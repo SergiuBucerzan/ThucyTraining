@@ -14,13 +14,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.Training4.pages.VacationManagementViewVacationsPage;
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
-import com.Training4.steps.TrackSteps;
+import com.Training4.steps.VacationManagementItemSteps;
+import com.Training4.steps.VacationManagementViewVacationPageSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-public class DmUserTest {
+public class VacationManagementViewVacationPageTest {
     
 	@Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -32,16 +34,12 @@ public class DmUserTest {
     LoginSteps loginSteps;
     
     @Steps
-    TrackSteps trackSteps;
+    VacationManagementViewVacationPageSteps vvsteps;
     
     @Test
-    public void successfull_login_test(){
-    	loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
-    	trackSteps.go_to_track();
+    public void create_vacation(){
+    	loginSteps.login_and_go_to_vacation(Constants.PM_USER, Constants.PM_PASS);
+    	vvsteps.clickViewVacationItem();
     	
     }
-    	
-    	
-    
- 
 } 

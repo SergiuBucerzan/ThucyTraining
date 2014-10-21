@@ -1,5 +1,7 @@
 package com.Training4;
 
+import java.text.ParseException;
+
 import net.thucydides.core.annotations.Managed;
 
 import com.Training4.tools.Constants; 
@@ -32,20 +34,43 @@ public class EndUser1Test {
     @Steps
     LoginSteps loginSteps;
     
+    
     @Steps
     NewVacationSteps newVacationSteps;
     
-    @Test
-    public void create_vacations(){
+    @Steps
+    NewVacationSteps newVacationRequestSteps;
+    
+    @Steps
+    NewVacationSteps buttonSave;
+    
+    @Steps
+    NewVacationSteps cancelSave;
+    
+   // @Test
+    public void create_vacations() throws ParseException{
 
     	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
     	newVacationSteps.goToNewVacation();
     	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+       
+       
+        newVacationRequestSteps.selectStartDate(1, 22, 2014);
+        newVacationRequestSteps.selectEndDate(1, 22, 2014);
+         buttonSave.goToSaveButton();
     }
-    
-//    @Test
-//    public void GoIntoNewVacation(){
-//    	
-//    }
+   
+    @Test
+    public void cancel_vacations() throws ParseException{
+
+    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
+    	newVacationSteps.goToNewVacation();
+    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+       
+       
+        newVacationRequestSteps.selectStartDate(1, 22, 2014);
+        newVacationRequestSteps.selectEndDate(1, 22, 2014);
+         cancelSave.goToSaveButton();
+    }
  
 } 
