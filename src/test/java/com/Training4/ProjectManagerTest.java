@@ -17,10 +17,11 @@ import org.openqa.selenium.WebDriver;
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 import com.Training4.steps.VacationManagementItemSteps;
+import com.Training4.steps.VacationManagementViewVacationPageSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-public class VacationManagementTest {
+public class ProjectManagerTest {
     
 	@Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -33,11 +34,13 @@ public class VacationManagementTest {
     
     @Steps
     VacationManagementItemSteps vmsteps;
+    @Steps
+    VacationManagementViewVacationPageSteps vvsteps;
     
     @Test
     public void create_vacation(){
     	loginSteps.login_and_go_to_vacation(Constants.PM_USER, Constants.PM_PASS);
     	vmsteps.clickVacationManagementItem();
-    	
+    	vvsteps.clickViewVacationItem();
     }
 } 
