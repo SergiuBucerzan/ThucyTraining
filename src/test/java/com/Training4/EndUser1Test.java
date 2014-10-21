@@ -56,16 +56,22 @@ public class EndUser1Test {
     @Steps
     NewVacationSteps sickV;
     
-   // @Test
+    @Steps
+    NewVacationSteps choose;
+    
+    @Steps
+    NewVacationSteps commentul;
+    
+    //@Test
     public void create_vacations() throws ParseException{
 
     	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
     	newVacationSteps.goToNewVacation();
-    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+    	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
        
        
-        newVacationRequestSteps.selectStartDate(1, 22, 2014);
-        newVacationRequestSteps.selectEndDate(1, 22, 2014);
+        newVacationRequestSteps.selectStartDate(10, 15, 2014);
+        newVacationRequestSteps.selectEndDate(10, 15, 2014);
          buttonSave.goToSaveButton();
     }
    
@@ -95,7 +101,7 @@ public class EndUser1Test {
          buttonSave.goToSaveButton();
     }
     
-  //  @Test
+   // @Test
     public void create_special_vacation() throws ParseException{
 
     	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
@@ -108,7 +114,22 @@ public class EndUser1Test {
          buttonSave.goToSaveButton();
     }
     
-    @Test
+   // @Test
+    public void create_special_vacation_ChildBirth() throws ParseException{
+
+    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
+    	newVacationSteps.goToNewVacation();
+    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+       
+        newVacationRequestSteps.selectStartDate(9, 22, 2014);
+        newVacationRequestSteps.selectEndDate(9, 22, 2014);
+        specialV.goSpecialVacation();
+        choose.chooseChildren();
+         buttonSave.goToSaveButton();
+    }
+    
+    
+   // @Test
     public void create_sick_vacation() throws ParseException{
 
     	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
@@ -121,5 +142,19 @@ public class EndUser1Test {
          buttonSave.goToSaveButton();
     }
     
+    @Test
+    public void create_comment() throws ParseException{
+
+    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
+    	newVacationSteps.goToNewVacation();
+    	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+       
+       
+        newVacationRequestSteps.selectStartDate(10, 15, 2014);
+        newVacationRequestSteps.selectEndDate(10, 15, 2014);
+        commentul.addedComment();
+        
+         buttonSave.goToSaveButton();
+    }
  
 } 

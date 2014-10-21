@@ -24,7 +24,7 @@ public class NewVacationPage extends PageObject {
 	@FindBy(css="a[href*='menuItem=new-request']")
 	private WebElement newvacation;
 	
-	@FindBy(css="div.content-title")
+	@FindBy(css="h1.header-title span")
 	private WebElement contentTitle;
 	
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_startDate")
@@ -50,6 +50,28 @@ public class NewVacationPage extends PageObject {
 	 
 	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_type_CM")
 	 private WebElement sickVacation;
+	 
+	 @FindBy(css ="option[value='CHILD_BIRTH']")
+	 private WebElementFacade childbirthvacation;
+	 
+	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_specialVacationMetadata")
+	 private WebElement comment;
+	 
+	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_commentContent")
+	 private WebElement commentariu;
+	 
+	 
+	 public void chooseChildBirth()
+	 {
+		 childbirthvacation.click();
+	  
+	 }
+	 
+	 public void addComment()
+	 {
+		 comment.click();
+	  
+	 }
 	 
 	public void clickNewVacation(){
 		element(newvacation).waitUntilVisible();
@@ -130,4 +152,8 @@ public class NewVacationPage extends PageObject {
 		sickVacation.click();
 	}
 	
+//	public void enter_comment(String keyword) {
+//        commentariu
+//    }
+//	
 }
