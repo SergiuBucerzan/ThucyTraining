@@ -25,6 +25,18 @@ public class MyRequestPage extends PageObject {
 	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElement applyButton;
 	
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_vacationTypeALLCheckbox")
+	private WebElement allVacationType;
+	
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_daysNumberALLCheckbox")
+	private WebElement allDays;
+	
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_vacationStatusALLCheckbox")
+	private WebElement allStatus;
+	
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_applyButton")
+	private WebElement apply;
+	
 	public void clickMyRequestItem(){
 		element(myRequestItem).waitUntilVisible();
 		myRequestItem.click();
@@ -55,4 +67,23 @@ public class MyRequestPage extends PageObject {
 		applyButton.click();
 	}
 	
+	public void clickallVacationType(){
+		element(allVacationType).waitUntilVisible();
+		allVacationType.click();
+	}
+	
+	public void clickallDays(){
+		element(allDays).waitUntilVisible();
+		allDays.click();
+	}
+
+	public void clickallStatus(){
+		element(allStatus).waitUntilVisible();
+		allStatus.click();
+	}
+
+	public void clickApply(){
+		element(apply).waitUntilVisible();
+		apply.click();
+	}
 }
