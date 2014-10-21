@@ -25,6 +25,11 @@ public class MyRequestPage extends PageObject {
 	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElement applyButton;
 	
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_vacationTypeALLCheckbox")
+	private WebElement allVacationType;
+	
+	
+	
 	public void clickMyRequestItem(){
 		element(myRequestItem).waitUntilVisible();
 		myRequestItem.click();
