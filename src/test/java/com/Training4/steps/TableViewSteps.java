@@ -6,14 +6,22 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 import com.Training4.pages.LoginPage;
 import com.Training4.pages.MainMenuPage;
-import com.Training4.pages.TrackPage;
+import com.Training4.pages.TableViewPage;
 
-public class TrackSteps extends ScenarioSteps {
 
+
+public class TableViewSteps extends ScenarioSteps {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
-	TrackPage trackPage;
+	TableViewPage tableViewPage;
 	
+	
+	 
 //	@Step
 //	public void clickSignInBtn(){
 //		loginPage.clickSignIn();
@@ -33,11 +41,17 @@ public class TrackSteps extends ScenarioSteps {
 //	public void go_to_vacation(){
 //		mainMenuPage.clickVacationMenuItem();
 //	}	
-		
+//		
 	@Step
 	public void go_to_track(){
-		trackPage.clickTrackItem();
-		
+		tableViewPage.clickTrackItem();
+	
+	
+	}
+	
+	@Step
+	public void verifyThatTableContainsElement(String... terms){
+		tableViewPage.verifyThatTableContainsElement(terms);
 	}
 	
 //	@StepGroup

@@ -16,12 +16,14 @@ import org.openqa.selenium.WebDriver;
 
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
-import com.Training4.steps.TrackSteps;
+import com.Training4.steps.TableViewSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
 public class DmUserTest {
     
+
+
 	@Managed(uniqueSession = true)
     public WebDriver webdriver;
     
@@ -32,16 +34,15 @@ public class DmUserTest {
     LoginSteps loginSteps;
     
     @Steps
-    TrackSteps trackSteps;
+    TableViewSteps tableViewSteps;
     
     @Test
     public void successfull_login_test(){
     	loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
-    	trackSteps.go_to_track();
-    	
+    	tableViewSteps.go_to_track();
+		tableViewSteps.verifyThatTableContainsElement("Name"); 
     }
-    	
-    	
+    	  	
     
  
 } 
