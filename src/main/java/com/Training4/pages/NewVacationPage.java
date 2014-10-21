@@ -42,6 +42,15 @@ public class NewVacationPage extends PageObject {
 	 @FindBy(css = "div[style*='block'] td.dp_previous")
 	 private WebElementFacade previousButton;
 
+	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_type_CF")
+	 private WebElement vWhitoutPay;
+	 
+	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_type_CS")
+	 private WebElement specialVacation;
+	 
+	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_type_CM")
+	 private WebElement sickVacation;
+	 
 	public void clickNewVacation(){
 		element(newvacation).waitUntilVisible();
 		newvacation.click();
@@ -56,8 +65,8 @@ public class NewVacationPage extends PageObject {
 		  startDateBox.click();
 		 }
 
-		 public void clickEndDateBox() {
-		  endDateBox.click();
+	 public void clickEndDateBox() {
+		 endDateBox.click();
 		 }
 	
 	 public void setDate(int month, int day, int year) throws ParseException {
@@ -102,4 +111,23 @@ public class NewVacationPage extends PageObject {
 		element(cancelButton).waitUntilVisible();
 		cancelButton.click();
 	}
+	
+	ArrayList<String> list = new ArrayList<String>();
+	
+	
+	public void clickVWhitoutPay(){
+		element(vWhitoutPay).waitUntilVisible();
+		vWhitoutPay.click();
+	}
+	
+	public void clickSpecialVacation(){
+		element(specialVacation).waitUntilVisible();
+		specialVacation.click();
+	}
+	
+	public void clickSickVacation(){
+		element(sickVacation).waitUntilVisible();
+		sickVacation.click();
+	}
+	
 }
