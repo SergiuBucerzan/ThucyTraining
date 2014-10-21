@@ -16,12 +16,13 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.Training4.pages.VacationManagementIndexPage;
+import com.Training4.pages.VacationManagementViewVacationsPage;
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-public class VacationManagementItemSteps {
+public class VacationManagementViewVacationPageSteps {
     
 	@Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -31,10 +32,10 @@ public class VacationManagementItemSteps {
 
     LoginSteps loginSteps;
 
-    VacationManagementIndexPage vacationManagementIndexPage;
+    VacationManagementViewVacationsPage viewVacationItem;
     @Step
-	public void clickVacationManagementItem() {
-		vacationManagementIndexPage.clickVacationManagementItem();
+	public void clickViewVacationItem() {
+    	viewVacationItem.clickViewVacationItem();
 		
 	}
    
