@@ -47,6 +47,18 @@ public class EndUserTest {
     @Steps
     MyRequestSteps apply;
     
+    @Steps
+    MyRequestSteps alltype;
+    
+    @Steps
+    MyRequestSteps alldays;
+    
+    @Steps
+    MyRequestSteps allstatus;
+    
+    @Steps
+    MyRequestSteps applyButton;
+    
     @Test
     public void create_vacation(){
     	loginSteps.login_and_go_to_vacation(Constants.END_USER, Constants.END_PASS);
@@ -59,6 +71,10 @@ public class EndUserTest {
     	onetofive.select_OneToFive();
     	approved.select_ApprovedStatus();
     	apply.select_ApplyButton();
+    	alltype.select_allVacationType();
+    	alldays.select_allDays();
+    	allstatus.select_allStatus();
+    	applyButton.select_Apply();
     }
  
 } 

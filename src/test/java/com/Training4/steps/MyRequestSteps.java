@@ -12,6 +12,10 @@ public class MyRequestSteps extends ScenarioSteps {
 	MyRequestPage daysnumber;
 	MyRequestPage status;
 	MyRequestPage apply;
+	MyRequestPage alltype;
+	MyRequestPage alldays;
+	MyRequestPage allstatus;
+	MyRequestPage applyy;
 	
 	
 	@Step
@@ -44,4 +48,27 @@ public class MyRequestSteps extends ScenarioSteps {
 	public void select_ApplyButton(){
 		apply.clickApplyButton();
 	}
+	
+	@Step
+	public void select_allVacationType(){
+		alltype.clickallVacationType();
+	}
+	
+	@Step
+	public void select_allDays(){
+		alldays.clickallDays();
+	}
+	
+	@Step
+	public void select_allStatus(){
+		allstatus.clickallStatus();
+	}
+	
+	@Step
+	public void select_Apply(){
+		applyy.clickApply();
+	}
 }
+
+
+
