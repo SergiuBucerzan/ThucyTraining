@@ -152,8 +152,8 @@ public class EndUser1Test {
     	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
        
        
-        newVacationRequestSteps.selectStartDate(10, 15, 2014);
-        newVacationRequestSteps.selectEndDate(10, 15, 2014);
+        newVacationRequestSteps.selectStartDate(10, 24, 2014);
+        newVacationRequestSteps.selectEndDate(10, 24, 2014);
         commentul.addedComment();
         commentul.enters("primul comentariu");
          buttonSave.goToSaveButton();
