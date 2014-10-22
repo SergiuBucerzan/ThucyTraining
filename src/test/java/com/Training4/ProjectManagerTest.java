@@ -43,13 +43,11 @@ public class ProjectManagerTest {
 	@Steps
 	PMVacationApproveSteps selectItemToApproveFromChecklistButton;
 	@Steps
-	PMVacationRejectSteps selectItemToRejectFromChecklistButton;
-	@Steps
-	PMVacationRejectSteps rejectVacationButton;
-	@Steps
 	TableViewSteps tableViewSteps;
 	@Steps
 	PMVacationApproveSteps approveVacationButton;
+	@Steps
+	PMVacationRejectSteps rejectVacationButton;
 
 	@Test
 	public void create_vacation() {
@@ -60,5 +58,6 @@ public class ProjectManagerTest {
 		selectItemToApproveFromChecklistButton.clickVacationManagementItem();
 		tableViewSteps.clickTheCheckboxForSpecificRows("Moroianu");
 		approveVacationButton.clickVacationApropve();
+		rejectVacationButton.clickVacationReject();
 	}
 }

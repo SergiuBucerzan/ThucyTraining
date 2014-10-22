@@ -10,6 +10,7 @@ import com.Training4.pages.LoginPage;
 import com.Training4.pages.MainMenuPage;
 import com.Training4.pages.NewVacationPage;
 import com.Training4.pages.PMVacationApprovePage;
+import com.Training4.pages.PMVacationRejectPage;
 import com.Training4.pages.VacationManagementInboxPage;
 
 public class PMVacationRejectSteps extends ScenarioSteps {
@@ -17,18 +18,18 @@ public class PMVacationRejectSteps extends ScenarioSteps {
 	private static final long serialVersionUID = 1L;
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
-
+	PMVacationRejectPage  rejectVacationButton;
 	PMVacationRejectSteps selectItemToRejectFromChecklistButton;
-	PMVacationRejectSteps rejectVacationButton;
-
+	VacationManagementInboxPage vacationManagementInboxPage;
+	
 	@Step
 	public void PMVacationRejectPage() {
-		selectItemToRejectFromChecklistButton
-				.clickSelectItemFromChecklistButton();
+		rejectVacationButton.clickSelectItemFromChecklistButton();
 	}
 
-	private void clickSelectItemFromChecklistButton() {
-		// TODO Auto-generated method stub
+	@Step
+	public void go_to_PM_Vacation_RejectPage(){
+		rejectVacationButton.clickRejectVacationButton();
 
 	}
 
@@ -37,17 +38,16 @@ public class PMVacationRejectSteps extends ScenarioSteps {
 		rejectVacationButton.clickRejectVacationButton();
 	}
 
-	private void clickRejectVacationButton() {
-		// TODO Auto-generated method stub
-
-	}
-
-	VacationManagementInboxPage vacationManagementIndexPage;
 
 	@Step
 	public void clickVacationManagementItem() {
-		vacationManagementIndexPage.clickVacationManagementItem();
-
+		vacationManagementInboxPage.clickVacationManagementItem();
+	
+	}
+	
+	@Step
+	public void clickVacationReject(){
+		rejectVacationButton.clickRejectVacationButton();
 	}
 
 }
