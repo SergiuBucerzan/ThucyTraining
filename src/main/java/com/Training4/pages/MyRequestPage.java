@@ -1,8 +1,12 @@
 package com.Training4.pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class MyRequestPage extends PageObject {
@@ -85,5 +89,23 @@ public class MyRequestPage extends PageObject {
 	public void clickApply(){
 		element(apply).waitUntilVisible();
 		apply.click();
+	}
+	
+	public List<String> returnVacationTypeList(){
+		List<WebElement> vacationTypeList = getDriver().findElements(By.cssSelector("td[class*='header.type'] a"));
+		List<String> vacationTypeStrList = new ArrayList<String>();
+		for (WebElement i : vacationTypeList){
+			vacationTypeStrList.add(i.getText());
+		}
+		return vacationTypeStrList;
+	}
+	
+	public List<Integer> returnDaysNumberList(){
+		List<WebElement> daysNumberList = getDriver().findElements(By.cssSelector("td[class*='day.number'] a"));
+		List<Integer> daysNumberIntList = new ArrayList<Integer>();
+		for (WebElement i : daysNumberList){
+			daysNumberIntList.add(Integer.parseInt(i.getText()));
+		}
+		return daysNumberIntList;
 	}
 }
