@@ -4,7 +4,7 @@ import java.text.ParseException;
 
 import net.thucydides.core.annotations.Managed;
 
-import com.Training4.tools.Constants; 
+import com.Training4.tools.Constants;
 
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
@@ -21,154 +21,174 @@ import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 import com.Training4.steps.NewVacationSteps;
 
-
-
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
 public class EndUser1Test {
-    
+
 	@Managed(uniqueSession = true)
-    public WebDriver webdriver;
-    
-    @ManagedPages(defaultUrl = Constants.BASE_URL)
-    public Pages pages;
-    
-    @Steps
-    LoginSteps loginSteps;
-    
-    
-    @Steps
-    NewVacationSteps newVacationSteps;
-    
-    @Steps
-    NewVacationSteps newVacationRequestSteps;
-    
-    @Steps
-    NewVacationSteps buttonSave;
-    
-    @Steps
-    NewVacationSteps cancelSave;
-    
-    @Steps
-    NewVacationSteps vacationWithout;
-    
-    @Steps
-    NewVacationSteps specialV;
-    
-    @Steps
-    NewVacationSteps sickV;
-    
-    @Steps
-    NewVacationSteps choose;
-    
-    @Steps
-    NewVacationSteps commentul;
-    
-    @Steps
-    NewVacationSteps whitd;
-    
-    //@Test
-    public void create_vacations() throws ParseException{
+	public WebDriver webdriver;
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	newVacationSteps.goToNewVacation();
-    	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-       
-       
-        newVacationRequestSteps.selectStartDate(10, 15, 2014);
-        newVacationRequestSteps.selectEndDate(10, 15, 2014);
-         buttonSave.goToSaveButton();
-    }
-   
-   // @Test
-    public void cancel_vacations() throws ParseException{
+	@ManagedPages(defaultUrl = Constants.BASE_URL)
+	public Pages pages;
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	newVacationSteps.goToNewVacation();
-    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-       
-       
-        newVacationRequestSteps.selectStartDate(1, 22, 2014);
-        newVacationRequestSteps.selectEndDate(1, 22, 2014);
-         cancelSave.goToSaveButton();
-    }
-    
-  //  @Test
-    public void create_vacation_withoutPayment() throws ParseException{
+	@Steps
+	LoginSteps loginSteps;
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	newVacationSteps.goToNewVacation();
-    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-       
-        newVacationRequestSteps.selectStartDate(1, 22, 2014);
-        newVacationRequestSteps.selectEndDate(1, 22, 2014);
-        vacationWithout.goVWithoutPayment();
-         buttonSave.goToSaveButton();
-    }
-    
-   // @Test
-    public void create_special_vacation() throws ParseException{
+	@Steps
+	NewVacationSteps newVacationSteps;
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	newVacationSteps.goToNewVacation();
-    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-       
-        newVacationRequestSteps.selectStartDate(9, 22, 2014);
-        newVacationRequestSteps.selectEndDate(9, 22, 2014);
-        specialV.goSpecialVacation();
-         buttonSave.goToSaveButton();
-    }
-    
-   // @Test
-    public void create_special_vacation_ChildBirth() throws ParseException{
+	@Steps
+	NewVacationSteps newVacationRequestSteps;
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	newVacationSteps.goToNewVacation();
-    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-       
-        newVacationRequestSteps.selectStartDate(9, 22, 2014);
-        newVacationRequestSteps.selectEndDate(9, 22, 2014);
-        specialV.goSpecialVacation();
-        choose.chooseChildren();
-         buttonSave.goToSaveButton();
-    }
-    
-    
-   // @Test
-    public void create_sick_vacation() throws ParseException{
+	@Steps
+	NewVacationSteps buttonSave;
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	newVacationSteps.goToNewVacation();
-    	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-        newVacationRequestSteps.selectStartDate(9, 23, 2014);
-        newVacationRequestSteps.selectEndDate(9, 23, 2014);
-        sickV.goSickVacation();
-         buttonSave.goToSaveButton();
-    }
-    
-   // @Test
-    public void create_comment() throws ParseException{
+	@Steps
+	NewVacationSteps cancelSave;
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	newVacationSteps.goToNewVacation();
-    	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-        newVacationRequestSteps.selectStartDate(10, 24, 2014);
-        newVacationRequestSteps.selectEndDate(10, 24, 2014);
-        commentul.addedComment();
-        commentul.enters("primul comentariu");
-         buttonSave.goToSaveButton();
-    }
- 
-    @Test
-    public void create_vacations_and_withdraw() throws ParseException{
+	@Steps
+	NewVacationSteps vacationWithout;
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	newVacationSteps.goToNewVacation();
-    	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());  
-        newVacationRequestSteps.selectStartDate(7, 15, 2014);
-        newVacationRequestSteps.selectEndDate(7, 15, 2014);
-         buttonSave.goToSaveButton();
-         whitd.goWithdraw();
-    }
-    
-} 
+	@Steps
+	NewVacationSteps specialV;
+
+	@Steps
+	NewVacationSteps sickV;
+
+	@Steps
+	NewVacationSteps choose;
+
+	@Steps
+	NewVacationSteps commentul;
+
+	@Steps
+	NewVacationSteps whitd;
+
+	@Steps
+	NewVacationSteps editButton;
+
+	// @Test
+	public void create_vacations() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+		Assert.assertEquals("Create a new vacation request",
+				newVacationSteps.get_content_title());
+
+		newVacationRequestSteps.selectStartDate(10, 15, 2014);
+		newVacationRequestSteps.selectEndDate(10, 15, 2014);
+		buttonSave.goToSaveButton();
+	}
+
+	// @Test
+	public void cancel_vacations() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+
+		newVacationRequestSteps.selectStartDate(1, 22, 2014);
+		newVacationRequestSteps.selectEndDate(1, 22, 2014);
+		cancelSave.goToSaveButton();
+	}
+
+	// @Test
+	public void create_vacation_withoutPayment() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+
+		newVacationRequestSteps.selectStartDate(1, 22, 2014);
+		newVacationRequestSteps.selectEndDate(1, 22, 2014);
+		vacationWithout.goVWithoutPayment();
+		buttonSave.goToSaveButton();
+	}
+
+	// @Test
+	public void create_special_vacation() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+
+		newVacationRequestSteps.selectStartDate(9, 22, 2014);
+		newVacationRequestSteps.selectEndDate(9, 22, 2014);
+		specialV.goSpecialVacation();
+		buttonSave.goToSaveButton();
+	}
+
+	// @Test
+	public void create_special_vacation_ChildBirth() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+
+		newVacationRequestSteps.selectStartDate(9, 22, 2014);
+		newVacationRequestSteps.selectEndDate(9, 22, 2014);
+		specialV.goSpecialVacation();
+		choose.chooseChildren();
+		buttonSave.goToSaveButton();
+	}
+
+	// @Test
+	public void create_sick_vacation() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+		newVacationRequestSteps.selectStartDate(9, 23, 2014);
+		newVacationRequestSteps.selectEndDate(9, 23, 2014);
+		sickV.goSickVacation();
+		buttonSave.goToSaveButton();
+	}
+
+	// @Test
+	public void create_comment() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+	//	Assert.assertEquals("Create a new vacation request",	newVacationSteps.get_content_title());
+		newVacationRequestSteps.selectStartDate(10, 24, 2014);
+		newVacationRequestSteps.selectEndDate(10, 24, 2014);
+		commentul.addedComment();
+		commentul.enters("primul comentariu");
+		buttonSave.goToSaveButton();
+	}
+
+	// @Test
+	public void create_vacations_and_withdraw() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+		newVacationRequestSteps.selectStartDate(7, 18, 2014);
+		newVacationRequestSteps.selectEndDate(7, 18, 2014);
+		buttonSave.goToSaveButton();
+		whitd.goWithdraw();
+		Assert.assertEquals("There are no actions for a Withdrawn vacation.",newVacationSteps.get_content_titl());
+	}
+
+	@Test
+	public void create_vacations_and_edit() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+				Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+	    Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+		newVacationRequestSteps.selectStartDate(8, 19, 2014);
+		newVacationRequestSteps.selectEndDate(8, 19, 2014);
+		buttonSave.goToSaveButton();
+		buttonSave.goEdit();
+	
+	}
+
+}
