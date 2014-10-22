@@ -23,5 +23,28 @@ public class FreeDaysSteps extends ScenarioSteps {
 	@Step
 	public String get_content_title(){
 		return freeDays.getContentTitle();
+	
 	}
+	
+	@Step
+    public void select_Holiday(){
+		freeDays.clickHoliday();
+	}
+	
+	@Step
+	public void select_OneToFive(){
+		freeDays.clickOneToFive();
+		
+	}
+	
+	@Step
+	public void select_ApprovedStatus(){
+		freeDays.clickApprovedstatus();
+	}
+	
+	@Step
+	public void select_ApplyButton(){
+		freeDays.clickApplyButton();
+	}
+	
 }

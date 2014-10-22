@@ -45,5 +45,10 @@ public class FreeDaysHistoryTest {
     	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
     	freeDaysH.goToFreeDays();
     	Assert.assertEquals("Filter History",freeDaysH.get_content_title());
+        freeDaysH.select_Holiday();
+        freeDaysH.select_OneToFive();
+        freeDaysH.select_ApprovedStatus();
+        freeDaysH.select_ApplyButton();
+    
     }
 }

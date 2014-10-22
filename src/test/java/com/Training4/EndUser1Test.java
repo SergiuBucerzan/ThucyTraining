@@ -40,32 +40,7 @@ public class EndUser1Test {
 	@Steps
 	NewVacationSteps newVacationRequestSteps;
 
-	@Steps
-	NewVacationSteps buttonSave;
-
-	@Steps
-	NewVacationSteps cancelSave;
-
-	@Steps
-	NewVacationSteps vacationWithout;
-
-	@Steps
-	NewVacationSteps specialV;
-
-	@Steps
-	NewVacationSteps sickV;
-
-	@Steps
-	NewVacationSteps choose;
-
-	@Steps
-	NewVacationSteps commentul;
-
-	@Steps
-	NewVacationSteps whitd;
-
-	@Steps
-	NewVacationSteps editButton;
+	
 
 	// @Test
 	public void create_vacations() throws ParseException {
@@ -78,7 +53,7 @@ public class EndUser1Test {
 
 		newVacationRequestSteps.selectStartDate(10, 15, 2014);
 		newVacationRequestSteps.selectEndDate(10, 15, 2014);
-		buttonSave.goToSaveButton();
+		newVacationSteps.goToSaveButton();
 	}
 
 	// @Test
@@ -91,7 +66,7 @@ public class EndUser1Test {
 
 		newVacationRequestSteps.selectStartDate(1, 22, 2014);
 		newVacationRequestSteps.selectEndDate(1, 22, 2014);
-		cancelSave.goToSaveButton();
+		newVacationSteps.goToSaveButton();
 	}
 
 	// @Test
@@ -104,8 +79,8 @@ public class EndUser1Test {
 
 		newVacationRequestSteps.selectStartDate(1, 22, 2014);
 		newVacationRequestSteps.selectEndDate(1, 22, 2014);
-		vacationWithout.goVWithoutPayment();
-		buttonSave.goToSaveButton();
+		newVacationSteps.goVWithoutPayment();
+		newVacationSteps.goToSaveButton();
 	}
 
 	// @Test
@@ -118,8 +93,8 @@ public class EndUser1Test {
 
 		newVacationRequestSteps.selectStartDate(9, 22, 2014);
 		newVacationRequestSteps.selectEndDate(9, 22, 2014);
-		specialV.goSpecialVacation();
-		buttonSave.goToSaveButton();
+		newVacationSteps.goSpecialVacation();
+		newVacationSteps.goToSaveButton();
 	}
 
 	// @Test
@@ -132,9 +107,9 @@ public class EndUser1Test {
 
 		newVacationRequestSteps.selectStartDate(9, 22, 2014);
 		newVacationRequestSteps.selectEndDate(9, 22, 2014);
-		specialV.goSpecialVacation();
-		choose.chooseChildren();
-		buttonSave.goToSaveButton();
+		newVacationSteps.goSpecialVacation();
+		newVacationSteps.chooseChildren();
+		newVacationSteps.goToSaveButton();
 	}
 
 	// @Test
@@ -146,8 +121,8 @@ public class EndUser1Test {
 		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
 		newVacationRequestSteps.selectStartDate(9, 23, 2014);
 		newVacationRequestSteps.selectEndDate(9, 23, 2014);
-		sickV.goSickVacation();
-		buttonSave.goToSaveButton();
+		newVacationSteps.goSickVacation();
+		newVacationSteps.goToSaveButton();
 	}
 
 	// @Test
@@ -159,9 +134,9 @@ public class EndUser1Test {
 	//	Assert.assertEquals("Create a new vacation request",	newVacationSteps.get_content_title());
 		newVacationRequestSteps.selectStartDate(10, 24, 2014);
 		newVacationRequestSteps.selectEndDate(10, 24, 2014);
-		commentul.addedComment();
-		commentul.enters("primul comentariu");
-		buttonSave.goToSaveButton();
+		newVacationSteps.addedComment();
+		newVacationSteps.enters("primul comentariu");
+		newVacationSteps.goToSaveButton();
 	}
 
 	// @Test
@@ -172,8 +147,8 @@ public class EndUser1Test {
 		newVacationSteps.goToNewVacation();
 		newVacationRequestSteps.selectStartDate(7, 18, 2014);
 		newVacationRequestSteps.selectEndDate(7, 18, 2014);
-		buttonSave.goToSaveButton();
-		whitd.goWithdraw();
+		newVacationSteps.goToSaveButton();
+		newVacationSteps.goWithdraw();
 		Assert.assertEquals("There are no actions for a Withdrawn vacation.",newVacationSteps.get_content_titl());
 	}
 
@@ -186,8 +161,8 @@ public class EndUser1Test {
 	    Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
 		newVacationRequestSteps.selectStartDate(8, 19, 2014);
 		newVacationRequestSteps.selectEndDate(8, 19, 2014);
-		buttonSave.goToSaveButton();
-		buttonSave.goEdit();
+		newVacationSteps.goToSaveButton();
+		newVacationSteps.goEdit();
 	
 	}
 
