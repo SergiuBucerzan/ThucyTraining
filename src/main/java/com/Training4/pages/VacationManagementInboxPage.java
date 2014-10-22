@@ -5,15 +5,15 @@ import net.thucydides.core.pages.PageObject;
 
 import org.openqa.selenium.WebElement;
 
-public class VacationManagementIndexPage extends PageObject {
+public class VacationManagementInboxPage extends PageObject {
 
 	@FindBy(css="a[href*='menuItem=inbox']")
-	private WebElement vacationManagementItem;
+	private WebElement vacationManagementInboxItem;
 	
 	
 	public void clickVacationManagementItem(){
-		element(vacationManagementItem).waitUntilVisible();
-		vacationManagementItem.click();
+		element(vacationManagementInboxItem).waitUntilVisible();
+		vacationManagementInboxItem.click();
 	}
 
 }

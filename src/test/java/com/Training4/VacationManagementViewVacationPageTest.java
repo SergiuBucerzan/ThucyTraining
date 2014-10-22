@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import com.Training4.pages.VacationManagementViewVacationsPage;
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
-import com.Training4.steps.VacationManagementItemSteps;
+import com.Training4.steps.VacationManagementInboxSteps;
 import com.Training4.steps.VacationManagementViewVacationPageSteps;
 
 @Story(Application.Search.SearchByKeyword.class)

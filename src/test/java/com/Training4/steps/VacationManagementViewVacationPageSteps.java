@@ -15,7 +15,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.Training4.pages.VacationManagementIndexPage;
+import com.Training4.pages.VacationManagementInboxPage;
 import com.Training4.pages.VacationManagementViewVacationsPage;
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
