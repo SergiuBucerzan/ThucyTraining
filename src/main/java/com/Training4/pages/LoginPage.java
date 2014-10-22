@@ -1,6 +1,5 @@
 package com.Training4.pages;
 
-import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 

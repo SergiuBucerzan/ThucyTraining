@@ -49,5 +49,6 @@ public class MyFreeDaysTest {
     	loginSteps.login_and_go_to_vacation(Constants.END_USER, Constants.END_PASS);
     	freeDays.goToFreedays();
     	Assert.assertEquals("My Free Days",freeDays.get_content_title());
+    	freeDays.clickBackButton();
     }
 }

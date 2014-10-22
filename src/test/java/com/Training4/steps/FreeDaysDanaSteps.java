@@ -25,4 +25,10 @@ public class FreeDaysDanaSteps extends ScenarioSteps {
 	public String get_content_title(){
 		return freedays.getContentTitle();
 	}
+
+    @Step
+    public void clickBackButton(){
+    	freedays.clickBack();
+    }
+	
 }

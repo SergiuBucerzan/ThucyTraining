@@ -1,6 +1,5 @@
 package com.Training4.pages;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import net.thucydides.core.annotations.findby.FindBy;
@@ -9,7 +8,6 @@ import net.thucydides.core.pages.PageObject;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By.ByCssSelector;
 
 import com.Training4.tools.StringUtils;
 
@@ -41,46 +39,86 @@ public class TableViewPage extends PageObject {
 		buildingsAll.click();
 	}
 
-	public void verifyThatTableContainsElement(String... terms) {
-		List<Integer> numberOfPagesList = StringUtils
-				.getAllIntegerNumbersFromString(pagesContainer.getText());
-		int pagesNumber = numberOfPagesList.get(1);
-		System.out.println(pagesNumber);
-		waitABit(2000);
-		boolean foundTerms = false;
-		for (int i = 0; i < pagesNumber; i++) {
-			List<WebElement> items = getDriver().findElements(
-					By.cssSelector("tr[class*='results-row']"));
-			System.out.println(items.size());
-			items.remove(0);
-			System.out.println(items.size());
+	 public void verifyThatTableContainsElement(String... terms) {
+		 List<Integer> numberOfPagesList = StringUtils.getAllIntegerNumbersFromString(pagesContainer.getText());
+			int pagesNumber = numberOfPagesList.get(1);
+			System.out.println(pagesNumber);
+			waitABit(2000);
+			 boolean foundTerms = false;
+	        for (int i = 0; i < pagesNumber; i++) {
+	        	List<WebElement> items = getDriver().findElements(By.cssSelector("tr[class*='results-row']"));
+	        	System.out.println(items.size());
+	        	items.remove(0);
+				System.out.println(items.size());
+	    
+	            for (WebElement item : items) {
+	                boolean containsTerms = true;
+	                $(item).waitUntilVisible();
+	                for (String term : terms) {
+	                    if (!item.getText().toLowerCase().contains(term.toLowerCase())) {
+	                        containsTerms = false;
+	                        break;
+	                    }
+	                }
+	                if (containsTerms) {
+                       foundTerms = true;
+	                    break;
+	                }
+	            }
+	            if (i < pagesNumber - 1 && !foundTerms) {
+	            	nextButton.click();
 
-			for (WebElement item : items) {
-				boolean containsTerms = true;
-				$(item).waitUntilVisible();
-				for (String term : terms) {
-					if (!item.getText().toLowerCase()
-							.contains(term.toLowerCase())) {
-						containsTerms = false;
+	               
+	            } else
+	                break;
+	        }
+	        Assert.assertTrue(
+	                "No record containing the searched terms was found in the table!",
+	                foundTerms);
+
+	    }
+	
+		public void verifyThatTableContainsElement2(String... terms) {
+			List<Integer> numberOfPagesList = StringUtils
+					.getAllIntegerNumbersFromString(pagesContainer.getText());
+			int pagesNumber = numberOfPagesList.get(1);
+			System.out.println(pagesNumber);
+			waitABit(2000);
+			boolean foundTerms = false;
+			for (int i = 0; i < pagesNumber; i++) {
+				List<WebElement> items = getDriver().findElements(
+						By.cssSelector("tr[class*='results-row']"));
+				System.out.println(items.size());
+				items.remove(0);
+				System.out.println(items.size());
+
+				for (WebElement item : items) {
+					boolean containsTerms = true;
+					$(item).waitUntilVisible();
+					for (String term : terms) {
+						if (!item.getText().toLowerCase()
+								.contains(term.toLowerCase())) {
+							containsTerms = false;
+							break;
+						}
+					}
+					if (containsTerms) {
+						foundTerms = true;
 						break;
 					}
 				}
-				if (containsTerms) {
-					foundTerms = true;
+				if (i < pagesNumber - 1 && !foundTerms) {
+					nextButton.click();
+
+				} else
 					break;
-				}
 			}
-			if (i < pagesNumber - 1 && !foundTerms) {
-				nextButton.click();
+			Assert.assertTrue(
+					"No record containing the searched terms was found in the table!",
+					foundTerms);
 
-			} else
-				break;
 		}
-		Assert.assertTrue(
-				"No record containing the searched terms was found in the table!",
-				foundTerms);
 
-	}
 
 	public void clickTheCheckboxForSpecificRows(String... terms) {
 		List<Integer> numberOfPagesList = StringUtils

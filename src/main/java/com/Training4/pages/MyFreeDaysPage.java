@@ -31,6 +31,9 @@ public class MyFreeDaysPage extends PageObject {
 	@FindBy(css=".content-title")
 	private WebElement conTitle;
 	
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_TabsBack")
+	private WebElement backButton;
+	
 	public void clickFreedays(){
 		element(free).waitUntilVisible();
 		free.click();
@@ -41,5 +44,9 @@ public class MyFreeDaysPage extends PageObject {
 		return conTitle.getText();
 	}
 
+	public void clickBack(){
+		backButton.click();
+	}
+	
 	}
 	

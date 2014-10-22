@@ -3,9 +3,6 @@ package com.Training4;
 import java.text.ParseException;
 
 import net.thucydides.core.annotations.Managed;
-
-import com.Training4.tools.Constants; 
-
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
@@ -20,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import com.Training4.requirements.Application;
 import com.Training4.steps.FreeDaysSteps;
 import com.Training4.steps.LoginSteps;
-import com.Training4.steps.NewVacationSteps;
+import com.Training4.tools.Constants;
 
 
 
