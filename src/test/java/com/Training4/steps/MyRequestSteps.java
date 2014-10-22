@@ -70,7 +70,20 @@ public class MyRequestSteps extends ScenarioSteps {
 		Assert.assertFalse("Vacation type contains element that should not be there after filter!!!", vacationTypeList.contains(vacationTypeNotWanted));
 	}
 	
-	
+	@Step
+	public void checkVacationDaysNumberNotContain(int min , int max){
+		List<Integer> daysNumberList = myrequestspage.returnDaysNumberList();
+		System.out.println(daysNumberList.size());
+		for(Integer day:daysNumberList){
+			System.out.println(String.valueOf(day));
+		
+		//	Assert.assertTrue("Nooooooooooooo!!!", day >= min && day <= max  );
+			Assert.assertTrue("Nooooooooooooo!!!", (day.compareTo(min) > 0 ||day.compareTo(min) == 0) && (day.compareTo(max) < 0 || day.compareTo(max) == 0)) ;	
+			
+		}
+			
+		
+	}
 }
 
 
