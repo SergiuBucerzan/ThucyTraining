@@ -17,32 +17,37 @@ public class PMVacationRejectSteps extends ScenarioSteps {
 	private static final long serialVersionUID = 1L;
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
-	
+
 	PMVacationRejectSteps selectItemToRejectFromChecklistButton;
 	PMVacationRejectSteps rejectVacationButton;
-	
-	
+
 	@Step
-	public void PMVacationRejectPage(){
-		selectItemToRejectFromChecklistButton.clickSelectItemFromChecklistButton();
+	public void PMVacationRejectPage() {
+		selectItemToRejectFromChecklistButton
+				.clickSelectItemFromChecklistButton();
 	}
+
 	private void clickSelectItemFromChecklistButton() {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	@Step
-	public void go_to_PM_Vacation_Reject_Page(){
+	public void go_to_PM_Vacation_Reject_Page() {
 		rejectVacationButton.clickRejectVacationButton();
 	}
+
 	private void clickRejectVacationButton() {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	VacationManagementInboxPage vacationManagementIndexPage;
+
 	@Step
 	public void clickVacationManagementItem() {
 		vacationManagementIndexPage.clickVacationManagementItem();
-		
+
 	}
 
 }
