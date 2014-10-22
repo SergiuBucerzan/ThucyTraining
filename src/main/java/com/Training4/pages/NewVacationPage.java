@@ -1,6 +1,7 @@
 package com.Training4.pages;
 
 import net.thucydides.core.annotations.findby.By;
+import ch.lambdaj.function.convert.Converter;
 import net.thucydides.core.annotations.findby.FindBy;
 import ch.lambdaj.function.convert.Converter;
 
@@ -12,6 +13,13 @@ import net.thucydides.core.pages.PageObject;
 import net.thucydides.core.pages.WebElementFacade;
 
 import org.openqa.selenium.WebElement;
+
+import net.thucydides.core.annotations.DefaultUrl;
+import static ch.lambdaj.Lambda.convert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import net.thucydides.core.pages.WebElementFacade;
 
 public class NewVacationPage extends PageObject {
 	
@@ -54,12 +62,14 @@ public class NewVacationPage extends PageObject {
 	 @FindBy(css ="option[value='CHILD_BIRTH']")
 	 private WebElementFacade childbirthvacation;
 	 
-	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_specialVacationMetadata")
+	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_newVacationComment")
 	 private WebElement comment;
 	 
 	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_commentContent")
-	 private WebElement commentariu;
+	 private WebElementFacade commentariu;
 	 
+	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_withdrawnVacationRequest")
+	 private WebElementFacade withdraw;
 	 
 	 public void chooseChildBirth()
 	 {
@@ -152,8 +162,14 @@ public class NewVacationPage extends PageObject {
 		sickVacation.click();
 	}
 	
-//	public void enter_comment(String keyword) {
-//        commentariu
-//    }
-//	
+	public void enter_comment(String keyword) {
+       commentariu.type(keyword);
+    }
+	
+	public void clickWithdraw()
+	 {
+		 withdraw.click();
+	  
+	 }
+	
 }

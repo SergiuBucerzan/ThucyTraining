@@ -26,35 +26,8 @@ public class NewVacationSteps extends ScenarioSteps {
 	NewVacationPage sick;
 	NewVacationPage child;
 	NewVacationPage comm;
-	/*@Step
-	public void clickSignInBtn(){
-		loginPage.clickSignIn();
-	}
+	NewVacationPage withDraw;
 	
-	@Step
-	public void typeUser(String user){
-		loginPage.typeUser(user);
-	}
-	
-	@Step
-	public void typePass(String pass){
-		loginPage.typePass(pass);
-	}
-	
-	@Step
-	public void go_to_vacation(){
-		mainMenuPage.clickVacationMenuItem();
-	}
-	
-	@StepGroup
-	public void login_and_go_to_vacation(String username, String password){
-		loginPage.open();
-		typeUser(username);
-		typePass(password);
-		clickSignInBtn();
-		go_to_vacation();
-	}
-	*/
 	@Step
 	public void goToNewVacation(){
 		newvacationpage.clickNewVacation();
@@ -114,5 +87,13 @@ public class NewVacationSteps extends ScenarioSteps {
 			comm.addComment();
 		}
 		
+	 @Step
+	    public void enters(String keyword) {
+	        comm.enter_comment(keyword);
+	    }
 	 
+	 @Step
+		public void goWithdraw(){
+		 withDraw.clickWithdraw();
+		}
 }

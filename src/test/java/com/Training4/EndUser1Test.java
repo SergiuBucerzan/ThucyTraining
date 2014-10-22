@@ -21,6 +21,8 @@ import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 import com.Training4.steps.NewVacationSteps;
 
+
+
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
 public class EndUser1Test {
@@ -61,6 +63,9 @@ public class EndUser1Test {
     
     @Steps
     NewVacationSteps commentul;
+    
+    @Steps
+    NewVacationSteps whitd;
     
     //@Test
     public void create_vacations() throws ParseException{
@@ -135,26 +140,35 @@ public class EndUser1Test {
     	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
     	newVacationSteps.goToNewVacation();
     	//Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-       
         newVacationRequestSteps.selectStartDate(9, 23, 2014);
         newVacationRequestSteps.selectEndDate(9, 23, 2014);
         sickV.goSickVacation();
          buttonSave.goToSaveButton();
     }
     
-    @Test
+   // @Test
     public void create_comment() throws ParseException{
 
     	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
     	newVacationSteps.goToNewVacation();
     	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-       
-       
-        newVacationRequestSteps.selectStartDate(10, 15, 2014);
-        newVacationRequestSteps.selectEndDate(10, 15, 2014);
+        newVacationRequestSteps.selectStartDate(10, 24, 2014);
+        newVacationRequestSteps.selectEndDate(10, 24, 2014);
         commentul.addedComment();
-        
+        commentul.enters("primul comentariu");
          buttonSave.goToSaveButton();
     }
  
+    @Test
+    public void create_vacations_and_withdraw() throws ParseException{
+
+    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
+    	newVacationSteps.goToNewVacation();
+    	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());  
+        newVacationRequestSteps.selectStartDate(7, 15, 2014);
+        newVacationRequestSteps.selectEndDate(7, 15, 2014);
+         buttonSave.goToSaveButton();
+         whitd.goWithdraw();
+    }
+    
 } 
