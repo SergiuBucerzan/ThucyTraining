@@ -1,6 +1,5 @@
 package com.Training4.pages;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import net.thucydides.core.annotations.findby.FindBy;
@@ -14,38 +13,14 @@ import com.Training4.tools.StringUtils;
 
 public class TableViewPage extends PageObject {
 
-	@FindBy(css = "a[href*='menuItem=vacation-tracker']")
-	private WebElement trackItem;
-
-	@FindBy(css = "tr[class*='results-row']")
-	private List<WebElement> rows;
-
 	@FindBy(css = "span[class='aui-paginator-current-page-report aui-paginator-total']")
 	private WebElement pagesContainer;
-
+	
 	@FindBy(css = "a[class='aui-paginator-link aui-paginator-next-link']")
 	private WebElement nextButton;
 	
-	@FindBy(css = "span[class'aui_3_4_0_1_2665']")
-	private WebElement buildingsAll;
-	
-
-
-	public void clickTrackItem() {
-		element(trackItem).waitUntilVisible();
-		trackItem.click();
-
-	}
-	
-	public void clickBuildingsAll(){
-		element(buildingsAll).waitUntilVisible();
-		buildingsAll.click();
-	}
-	
-	
-
-	 public void verifyThatTableContainsElement(
-	        String... terms) {List<Integer> numberOfPagesList = StringUtils.getAllIntegerNumbersFromString(pagesContainer.getText());
+	 public void verifyThatTableContainsElement(String... terms) {
+		 	List<Integer> numberOfPagesList = StringUtils.getAllIntegerNumbersFromString(pagesContainer.getText());
 			int pagesNumber = numberOfPagesList.get(1);
 			System.out.println(pagesNumber);
 			waitABit(2000);
@@ -72,6 +47,7 @@ public class TableViewPage extends PageObject {
 	            }
 	            if (i < pagesNumber - 1 && !foundTerms) {
 	            	nextButton.click();
+	            	waitABit(1000);
 
 	               
 	            } else

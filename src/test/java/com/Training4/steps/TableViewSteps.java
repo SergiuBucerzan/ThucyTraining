@@ -1,12 +1,10 @@
 package com.Training4.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 import com.Training4.pages.LoginPage;
 import com.Training4.pages.MainMenuPage;
-import com.Training4.pages.TableViewPage;
 import com.Training4.pages.TableViewPage;
 
 
@@ -16,6 +14,7 @@ public class TableViewSteps extends ScenarioSteps {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
 	TableViewPage tableViewPage;
@@ -42,16 +41,7 @@ public class TableViewSteps extends ScenarioSteps {
 //		mainMenuPage.clickVacationMenuItem();
 //	}	
 //		
-	@Step
-	public void go_to_track(){
-		tableViewPage.clickTrackItem();
-	}
 	
-	@Step
-	public void select_buildings_all(){
-		tableViewPage.clickBuildingsAll();
-		
-	}
 	
 	@Step
 	public void verifyThatTableContainsElement(String... terms){
@@ -65,7 +55,6 @@ public class TableViewSteps extends ScenarioSteps {
 //		typePass(password);
 //		clickSignInBtn();
 //		go_to_vacation();
-//		go_to_track();
 //	}
 	
 }
