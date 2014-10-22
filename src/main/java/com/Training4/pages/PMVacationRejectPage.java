@@ -18,7 +18,7 @@ public class PMVacationRejectPage extends PageObject {
 	@FindBy(css = "_evovacation_WAR_EvoVacationportlet_evozonVacationsSearchContainer_col-rowChecker_row-1")
 	private WebElementFacade selectItemToRejectFromChecklistButton;
 
-	@FindBy(css = "_evovacation_WAR_EvoVacationportlet_multipleRejectButton")
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_multipleRejectButton")
 	private WebElementFacade rejectVacationButton;
 
 	@FindBy(css = "a[href*='menuItem=new-request']")
@@ -27,11 +27,6 @@ public class PMVacationRejectPage extends PageObject {
 	@FindBy(css = "div.content-title")
 	private WebElement contentTitle;
 
-	@FindBy(css = "div[style*='block'] td.dp_next")
-	private WebElementFacade nextButton;
-
-	@FindBy(css = "div[style*='block'] td.dp_previous")
-	private WebElementFacade previousButton;
 
 	public void select_nth_request(int n) {
 		List<WebElement> requestsList = getDriver().findElements(
@@ -47,6 +42,7 @@ public class PMVacationRejectPage extends PageObject {
 	}
 
 	public void clickSelectItemFromChecklistButton() {
+		element (selectItemToRejectFromChecklistButton).waitUntilVisible();
 		selectItemToRejectFromChecklistButton.click();
 	}
 
