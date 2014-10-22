@@ -68,6 +68,8 @@ public class NewVacationPage extends PageObject {
 	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_commentContent")
 	 private WebElementFacade commentariu;
 	 
+	 @FindBy(css="#_evovacation_WAR_EvoVacationportlet_withdrawnVacationRequest")
+	 private WebElementFacade withdraw;
 	 
 	 public void chooseChildBirth()
 	 {
@@ -163,5 +165,11 @@ public class NewVacationPage extends PageObject {
 	public void enter_comment(String keyword) {
        commentariu.type(keyword);
     }
+	
+	public void clickWithdraw()
+	 {
+		 withdraw.click();
+	  
+	 }
 	
 }
