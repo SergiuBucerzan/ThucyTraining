@@ -22,8 +22,8 @@ public class TrackPage extends PageObject{
 
 
 	
-	@FindBy(css = "div[class='vacation-tracker-filter'] div:nth-child(2) div[id='buildings'] dl dt div")
-	private WebElement buildings;
+//	@FindBy(css = "div[class='vacation-tracker-filter'] div:nth-child(2) div[id='buildings'] dl dt div")
+//	private WebElement buildings;
 	
 	@FindBy(css = "span[class='aui-button-content'] input")
 	private WebElement clickApply;
