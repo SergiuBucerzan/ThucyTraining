@@ -19,6 +19,7 @@ public class LoginSteps extends ScenarioSteps {
 	
 	@Step
 	public void typeUser(String user){
+		loginPage.maximizeWindow();
 		loginPage.typeUser(user);
 	}
 	

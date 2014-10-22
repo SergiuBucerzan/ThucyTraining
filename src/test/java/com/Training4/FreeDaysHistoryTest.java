@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.Training4.requirements.Application;
-import com.Training4.steps.FreeDaysSteps;
+import com.Training4.steps.FreeDaysHistorySteps;
 import com.Training4.steps.LoginSteps;
 import com.Training4.tools.Constants;
 
@@ -37,7 +37,7 @@ public class FreeDaysHistoryTest {
     
     
     @Steps
-    FreeDaysSteps freeDaysH;
+    FreeDaysHistorySteps freeDaysH;
     
     @Test
     public void view_freedays() throws ParseException{
@@ -49,6 +49,6 @@ public class FreeDaysHistoryTest {
         freeDaysH.select_OneToFive();
         freeDaysH.select_ApprovedStatus();
         freeDaysH.select_ApplyButton();
-    
+        freeDaysH.select_Filter("75");
     }
 }

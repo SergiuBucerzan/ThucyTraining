@@ -11,10 +11,11 @@ import com.Training4.pages.LoginPage;
 import com.Training4.pages.MainMenuPage;
 import com.Training4.pages.NewVacationPage;
 
-public class FreeDaysSteps extends ScenarioSteps {
+public class FreeDaysHistorySteps extends ScenarioSteps {
 
 	FreeDayHistoryPage freeDays;
 	
+
 	@Step
 	public void goToFreeDays(){
 		freeDays.clickFreeDays();
@@ -46,5 +47,12 @@ public class FreeDaysSteps extends ScenarioSteps {
 	public void select_ApplyButton(){
 		freeDays.clickApplyButton();
 	}
+	
+	@Step
+	public void select_Filter(String label){
+		freeDays.clickFilter( label);
+		
+	}
+	
 	
 }
