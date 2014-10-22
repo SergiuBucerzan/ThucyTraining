@@ -3,7 +3,6 @@ package com.Training4.steps;
 import java.text.ParseException;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 import com.Training4.pages.LoginPage;
@@ -27,6 +26,7 @@ public class NewVacationSteps extends ScenarioSteps {
 	NewVacationPage child;
 	NewVacationPage comm;
 	NewVacationPage withDraw;
+	NewVacationPage editbutton;
 	
 	@Step
 	public void goToNewVacation(){
@@ -36,6 +36,11 @@ public class NewVacationSteps extends ScenarioSteps {
 	@Step
 	public String get_content_title(){
 		return newvacationpage.getContentTitle();
+	}
+	
+	@Step
+	public String get_content_titl(){
+		return newvacationpage.getContentTitl();
 	}
 
 	@Step
@@ -96,4 +101,9 @@ public class NewVacationSteps extends ScenarioSteps {
 		public void goWithdraw(){
 		 withDraw.clickWithdraw();
 		}
+	 
+	 @Step
+		public void goEdit(){
+	 editbutton.clickEdit();
+	 }
 }
