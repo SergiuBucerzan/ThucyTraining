@@ -43,6 +43,12 @@ public class FreeDayHistoryPage extends PageObject {
 	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElement applyButton;
 	
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_freeDaysHistoriesSearchContainerPageIteratorBottom_itemsPerPage")
+	private WebElement filter;
+	
+	@FindBy(css = "option[value='75']")
+	private WebElementFacade val;
+	
 	public void clickFreeDays(){
 		element(free).waitUntilVisible();
 		free.click();
@@ -71,6 +77,12 @@ public class FreeDayHistoryPage extends PageObject {
 	public void clickApplyButton(){
 		element(applyButton).waitUntilVisible();
 		applyButton.click();
+	}
+	
+	public void clickFilter(String label){
+		element(filter).waitUntilVisible();
+		element(filter).selectByVisibleText(label);
+		waitABit(3000);
 	}
 	
 }

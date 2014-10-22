@@ -19,7 +19,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.Training4.requirements.Application;
 import com.Training4.steps.FreeDaysDanaSteps;
-import com.Training4.steps.FreeDaysSteps;
+import com.Training4.steps.FreeDaysHistorySteps;
 import com.Training4.steps.LoginSteps;
 import com.Training4.steps.NewVacationSteps;
 
