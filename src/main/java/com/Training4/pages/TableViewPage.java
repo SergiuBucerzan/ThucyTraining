@@ -66,15 +66,14 @@ public class TableViewPage extends PageObject {
 	                }
 	            }
 	            if (i < pagesNumber - 1 && !foundTerms) {
+	            	waitABit(1000);
 	            	nextButton.click();
 
 	               
 	            } else
 	                break;
 	        }
-	        Assert.assertTrue(
-	                "No record containing the searched terms was found in the table!",
-	                foundTerms);
+	        Assert.assertTrue("No record containing the searched terms was found in the table!", foundTerms);
 
 	    }
 	

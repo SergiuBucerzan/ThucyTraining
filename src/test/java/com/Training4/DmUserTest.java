@@ -64,13 +64,14 @@ public class DmUserTest {
 		public void go_to_vacations_report() {
 			loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
 			vacationsReportSteps.go_to_vacations_report();
+			tableViewSteps.verifyThatTableContainsElement("Sergiu");
 
 		}
 	// @Test
 		public void verify_that_table_contains_element() {
 			loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
 			trackSteps.go_to_track();
-			tableViewSteps.verifyThatTableContainsElement("Sergiu");
+			tableViewSteps.verifyThatTableContainsElement("Alexandra");
 
 	}
 
