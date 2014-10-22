@@ -1,5 +1,9 @@
 package com.Training4.steps;
 
+import java.util.List;
+
+import org.junit.Assert;
+
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -8,15 +12,6 @@ import com.Training4.pages.MyRequestPage;
 public class MyRequestSteps extends ScenarioSteps {
 
 	MyRequestPage myrequestspage;
-	MyRequestPage holidaybox;
-	MyRequestPage daysnumber;
-	MyRequestPage status;
-	MyRequestPage apply;
-	MyRequestPage alltype;
-	MyRequestPage alldays;
-	MyRequestPage allstatus;
-	MyRequestPage applyy;
-	
 	
 	@Step
 	public void go_to_MyRequestPage(){
@@ -30,44 +25,52 @@ public class MyRequestSteps extends ScenarioSteps {
     
 	@Step
     public void select_Holiday(){
-		holidaybox.clickHoliday();
+		myrequestspage.clickHoliday();
 	}
 	
 	@Step
 	public void select_OneToFive(){
-		daysnumber.clickOneToFive();
+		myrequestspage.clickOneToFive();
 		
 	}
 	
 	@Step
 	public void select_ApprovedStatus(){
-		status.clickApprovedstatus();
+		myrequestspage.clickApprovedstatus();
 	}
 	
 	@Step
 	public void select_ApplyButton(){
-		apply.clickApplyButton();
+		myrequestspage.clickApplyButton();
 	}
 	
 	@Step
 	public void select_allVacationType(){
-		alltype.clickallVacationType();
+		myrequestspage.clickallVacationType();
 	}
 	
 	@Step
 	public void select_allDays(){
-		alldays.clickallDays();
+		myrequestspage.clickallDays();
 	}
 	
 	@Step
 	public void select_allStatus(){
-		allstatus.clickallStatus();
+		myrequestspage.clickallStatus();
 	}
 	
 	@Step
 	public void select_Apply(){
-		applyy.clickApply();
+		myrequestspage.clickApply();
 	}
+	
+	@Step
+	public void checkVatationTypeDoesNotContain(String vacationTypeNotWanted){
+		List<String> vacationTypeList = myrequestspage.returnVacationTypeList();
+		Assert.assertFalse("Vacation type contains element that should not be there after filter!!!", vacationTypeList.contains(vacationTypeNotWanted));
+	}
+	
+	
 }
 
 

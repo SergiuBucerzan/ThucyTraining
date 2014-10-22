@@ -35,30 +35,6 @@ public class EndUserTest {
     @Steps
     MyRequestSteps myRequestSteps;
     
-    @Steps
-    MyRequestSteps holiday;
-    
-    @Steps
-    MyRequestSteps onetofive;
-    
-    @Steps
-    MyRequestSteps approved;
-    
-    @Steps
-    MyRequestSteps apply;
-    
-    @Steps
-    MyRequestSteps alltype;
-    
-    @Steps
-    MyRequestSteps alldays;
-    
-    @Steps
-    MyRequestSteps allstatus;
-    
-    @Steps
-    MyRequestSteps applyButton;
-    
     @Test
     public void create_vacation(){
     	loginSteps.login_and_go_to_vacation(Constants.END_USER, Constants.END_PASS);
@@ -67,14 +43,18 @@ public class EndUserTest {
     	
     	//Assert.assertEquals("Content title is not as expected!!!", myRequestSteps.get_content_title().contentEquals("Filters requests"));
     	Assert.assertEquals("Filter requests", myRequestSteps.get_content_title());
-    	holiday.select_Holiday();
-    	onetofive.select_OneToFive();
-    	approved.select_ApprovedStatus();
-    	apply.select_ApplyButton();
-    	alltype.select_allVacationType();
-    	alldays.select_allDays();
-    	allstatus.select_allStatus();
-    	applyButton.select_Apply();
+    	
+    	myRequestSteps.select_Holiday();
+    	myRequestSteps.select_OneToFive();
+    	myRequestSteps.select_ApprovedStatus();
+    	myRequestSteps.select_ApplyButton();
+    	
+    	myRequestSteps.select_allVacationType();
+    	myRequestSteps.select_allDays();
+    	myRequestSteps.select_allStatus();
+    	myRequestSteps.select_Apply();
+    	
+    	myRequestSteps.checkVatationTypeDoesNotContain("Special Vacation");
     }
  
 } 
