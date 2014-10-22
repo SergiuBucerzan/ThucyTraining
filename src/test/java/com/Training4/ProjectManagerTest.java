@@ -18,7 +18,7 @@ import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 import com.Training4.steps.PMVacationApproveSteps;
 import com.Training4.steps.PMVacationRejectSteps;
-import com.Training4.steps.VacationManagementItemSteps;
+import com.Training4.steps.VacationManagementInboxSteps;
 import com.Training4.steps.VacationManagementViewVacationPageSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
@@ -35,24 +35,24 @@ public class ProjectManagerTest {
     LoginSteps loginSteps;
     
     @Steps
-    VacationManagementItemSteps vmsteps;
+    VacationManagementInboxSteps viewInboxSteps;
     @Steps
-    VacationManagementViewVacationPageSteps vvsteps;
+    VacationManagementViewVacationPageSteps viewVacationSteps;
     @Steps
-    PMVacationApproveSteps clickButton;
+    PMVacationApproveSteps selectItemToApproveFromChecklistButton;
     @Steps
-    PMVacationApproveSteps approveButton;
+    PMVacationApproveSteps approveVacationButton;
     @Steps
-    PMVacationRejectSteps selectButton;
+    PMVacationRejectSteps selectItemToRejectFromChecklistButton;
     @Steps
-    PMVacationRejectSteps rejectButton;
+    PMVacationRejectSteps rejectVacationButton;
     
     @Test
     public void create_vacation(){
     	loginSteps.login_and_go_to_vacation(Constants.PM_USER, Constants.PM_PASS);
-    	vmsteps.clickVacationManagementItem();
-    	vvsteps.clickViewVacationItem();
-    	clickButton.clickVacationManagementItem();
-    	approveButton.clickVacationManagementItem();
+    	viewInboxSteps.clickVacationManagementInboxItem();
+    	viewVacationSteps.clickViewVacationItem();
+    	selectItemToApproveFromChecklistButton.clickVacationManagementItem();
+    	approveVacationButton.clickVacationManagementItem();
     }
 } 
