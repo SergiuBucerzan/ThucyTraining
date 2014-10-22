@@ -1,9 +1,6 @@
 package com.Training4.steps;
 
-import java.text.ParseException;
-
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 import com.Training4.pages.LoginPage;
@@ -36,5 +33,6 @@ public class PMVacationApproveSteps extends ScenarioSteps {
 		vacationManagementIndexPage.clickVacationManagementItem();
 		
 	}
+
 
 }

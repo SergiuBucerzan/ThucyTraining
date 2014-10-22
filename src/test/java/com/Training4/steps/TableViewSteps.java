@@ -47,6 +47,10 @@ public class TableViewSteps extends ScenarioSteps {
 	public void verifyThatTableContainsElement(String... terms){
 		tableViewPage.verifyThatTableContainsElement(terms);
 	}
+	@Step
+	public void clickTheCheckboxForSpecificRows(String... terms){
+		tableViewPage.clickTheCheckboxForSpecificRows(terms);
+	}
 	
 //	@StepGroup
 //	public void login_and_go_to_vacation(String username, String password){

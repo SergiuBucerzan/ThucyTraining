@@ -48,13 +48,14 @@ public class EndUserTest {
     	myRequestSteps.select_OneToFive();
     	myRequestSteps.select_ApprovedStatus();
     	myRequestSteps.select_ApplyButton();
-    	
-    	myRequestSteps.select_allVacationType();
-    	myRequestSteps.select_allDays();
-    	myRequestSteps.select_allStatus();
-    	myRequestSteps.select_Apply();
-    	
+//    	
+//    	myRequestSteps.select_allVacationType();
+//    	myRequestSteps.select_allDays();
+//    	myRequestSteps.select_allStatus();
+//    	myRequestSteps.select_Apply();
+//    	
     	myRequestSteps.checkVatationTypeDoesNotContain("Special Vacation");
+    	myRequestSteps.checkVacationDaysNumberNotContain(1,5);
     }
  
 } 

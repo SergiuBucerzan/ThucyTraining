@@ -21,20 +21,12 @@ public class PMVacationApprovePage extends PageObject {
 	@FindBy(css="evovacation_WAR_EvoVacationportlet_multipleApproveButton")
 	private WebElementFacade approveVacationButton;
 	
-	@FindBy(css="a[href*='menuItem=new-request']")
-	private WebElement newvacation;
-	
 	@FindBy(css="div.content-title")
 	private WebElement contentTitle;
 	
-	@FindBy(css = "div[style*='block'] td.dp_next")
-	 private WebElementFacade nextButton;
-
-	@FindBy(css = "div[style*='block'] td.dp_previous")
-	 private WebElementFacade previousButton;
-
 	
 	public void select_nth_request(int n){
+		
 		List<WebElement> requestsList = getDriver().findElements(By.cssSelector("input[type='checkbox'][value]"));
 		
 		element(requestsList.get(n)).click();
@@ -48,12 +40,14 @@ public class PMVacationApprovePage extends PageObject {
 
 	
 	public void clickSelectItemFromChecklistButton (){
+		element(selectItemToApproveFromChecklistButton).waitUntilVisible();
 		selectItemToApproveFromChecklistButton.click();
 	}
 	
 	public void clickApproveVacationButton(){
 		approveVacationButton.click();
 	}
+
 	
 }
 	
