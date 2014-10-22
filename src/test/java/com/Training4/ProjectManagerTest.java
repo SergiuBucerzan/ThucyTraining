@@ -2,7 +2,7 @@ package com.Training4;
 
 import net.thucydides.core.annotations.Managed;
 
-import com.Training4.tools.Constants; 
+import com.Training4.tools.Constants;
 
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
@@ -26,38 +26,39 @@ import com.Training4.steps.VacationManagementViewVacationPageSteps;
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
 public class ProjectManagerTest {
-    
+
 	@Managed(uniqueSession = true)
-    public WebDriver webdriver;
-    
-    @ManagedPages(defaultUrl = Constants.BASE_URL)
-    public Pages pages;
-    
-    @Steps
-    LoginSteps loginSteps;
-    
-    @Steps
-    VacationManagementInboxSteps vacationManagementInboxSteps;
-    @Steps
-    VacationManagementViewVacationPageSteps vacationManagementViewVacationPageSteps;
-    @Steps
-    PMVacationApproveSteps selectItemToApproveFromChecklistButton;
-    @Steps
-    PMVacationRejectSteps selectItemToRejectFromChecklistButton;
-    @Steps
-    PMVacationRejectSteps rejectVacationButton;
-    @Steps
-    TableViewSteps tableViewSteps;
-    @Steps
-    PMVacationApproveSteps approveVacationButton;
-    
-    @Test
-    public void create_vacation(){
-    	loginSteps.login_and_go_to_vacation(Constants.PM_USER, Constants.PM_PASS);
-    	vacationManagementInboxSteps.clickVacationManagementInboxItem();
-    	vacationManagementViewVacationPageSteps.clickViewVacationItem();
-    	selectItemToApproveFromChecklistButton.clickVacationManagementItem();
-    	tableViewSteps.clickTheCheckboxForSpecificRows("Damaris");
-    	approveVacationButton.clickVacationManagementItem();
-    }
-} 
+	public WebDriver webdriver;
+
+	@ManagedPages(defaultUrl = Constants.BASE_URL)
+	public Pages pages;
+
+	@Steps
+	LoginSteps loginSteps;
+
+	@Steps
+	VacationManagementInboxSteps vacationManagementInboxSteps;
+	@Steps
+	VacationManagementViewVacationPageSteps vacationManagementViewVacationPageSteps;
+	@Steps
+	PMVacationApproveSteps selectItemToApproveFromChecklistButton;
+	@Steps
+	PMVacationRejectSteps selectItemToRejectFromChecklistButton;
+	@Steps
+	PMVacationRejectSteps rejectVacationButton;
+	@Steps
+	TableViewSteps tableViewSteps;
+	@Steps
+	PMVacationApproveSteps approveVacationButton;
+
+	@Test
+	public void create_vacation() {
+		loginSteps.login_and_go_to_vacation(Constants.PM_USER,
+				Constants.PM_PASS);
+		vacationManagementInboxSteps.clickVacationManagementInboxItem();
+		vacationManagementViewVacationPageSteps.clickViewVacationItem();
+		selectItemToApproveFromChecklistButton.clickVacationManagementItem();
+		tableViewSteps.clickTheCheckboxForSpecificRows("Moroianu");
+		approveVacationButton.clickVacationApropve();
+	}
+}

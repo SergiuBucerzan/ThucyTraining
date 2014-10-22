@@ -109,4 +109,14 @@ public class MyRequestPage extends PageObject {
 		return daysNumberIntList;
 	}
 	
+	public List<String> returnvacationStatusList(){
+		List<WebElement> vacationStatusList = getDriver().findElements(By.cssSelector("td[class*='header.status'] a"));
+		List<String> vacationStatusStrList = new ArrayList<String>();
+		for (WebElement i : vacationStatusList){
+			vacationStatusStrList.add(i.getText());
+		}
+		return vacationStatusStrList;
+	
+}
+	
 }

@@ -56,6 +56,7 @@ public class EndUserTest {
 //    	
     	myRequestSteps.checkVatationTypeDoesNotContain("Special Vacation");
     	myRequestSteps.checkVacationDaysNumberNotContain(1,5);
+    	myRequestSteps.checkVacationStatusDoesNotContain("Approved");
     }
  
 } 
