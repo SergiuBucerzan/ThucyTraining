@@ -17,7 +17,7 @@ public class PMVacationRejectSteps extends ScenarioSteps {
 	private static final long serialVersionUID = 1L;
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
-	NewVacationPage newVacationRequestPage;
+	
 	PMVacationRejectSteps selectItemToRejectFromChecklistButton;
 	PMVacationRejectSteps rejectVacationButton;
 	
