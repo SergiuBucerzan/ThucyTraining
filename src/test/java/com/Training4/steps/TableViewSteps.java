@@ -9,7 +9,6 @@ import com.Training4.pages.MainMenuPage;
 import com.Training4.pages.TableViewPage;
 import com.Training4.pages.TableViewPage;
 
-
 public class TableViewSteps extends ScenarioSteps {
 
 	/**
@@ -19,57 +18,56 @@ public class TableViewSteps extends ScenarioSteps {
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
 	TableViewPage tableViewPage;
-	
-	
-	 
-//	@Step
-//	public void clickSignInBtn(){
-//		loginPage.clickSignIn();
-//	}
-//	
-//	@Step
-//	public void typeUser(String user){
-//		loginPage.typeUser(user);
-//	}
-//	
-//	@Step
-//	public void typePass(String pass){
-//		loginPage.typePass(pass);
-//	}
-//	
-//	@Step
-//	public void go_to_vacation(){
-//		mainMenuPage.clickVacationMenuItem();
-//	}	
-//		
+
+	// @Step
+	// public void clickSignInBtn(){
+	// loginPage.clickSignIn();
+	// }
+	//
+	// @Step
+	// public void typeUser(String user){
+	// loginPage.typeUser(user);
+	// }
+	//
+	// @Step
+	// public void typePass(String pass){
+	// loginPage.typePass(pass);
+	// }
+	//
+	// @Step
+	// public void go_to_vacation(){
+	// mainMenuPage.clickVacationMenuItem();
+	// }
+	//
 	@Step
-	public void go_to_track(){
+	public void go_to_track() {
 		tableViewPage.clickTrackItem();
 	}
-	
+
 	@Step
-	public void select_buildings_all(){
+	public void select_buildings_all() {
 		tableViewPage.clickBuildingsAll();
-		
+
 	}
-	
+
 	@Step
-	public void verifyThatTableContainsElement(String... terms){
+	public void verifyThatTableContainsElement(String... terms) {
 		tableViewPage.verifyThatTableContainsElement(terms);
 	}
+
 	@Step
-	public void clickTheCheckboxForSpecificRows(String... terms){
+	public void clickTheCheckboxForSpecificRows(String... terms) {
 		tableViewPage.clickTheCheckboxForSpecificRows(terms);
 	}
-	
-//	@StepGroup
-//	public void login_and_go_to_vacation(String username, String password){
-//		loginPage.open();
-//		typeUser(username);
-//		typePass(password);
-//		clickSignInBtn();
-//		go_to_vacation();
-//		go_to_track();
-//	}
-	
+
+	// @StepGroup
+	// public void login_and_go_to_vacation(String username, String password){
+	// loginPage.open();
+	// typeUser(username);
+	// typePass(password);
+	// clickSignInBtn();
+	// go_to_vacation();
+	// go_to_track();
+	// }
+
 }

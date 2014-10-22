@@ -11,28 +11,33 @@ import com.Training4.pages.VacationManagementInboxPage;
 
 public class PMVacationApproveSteps extends ScenarioSteps {
 
-	
 	private static final long serialVersionUID = 1L;
 	LoginPage loginPage;
-	MainMenuPage mainMenuPage;	
+	MainMenuPage mainMenuPage;
 	NewVacationPage newVacationRequestPage;
-	PMVacationApprovePage selectItemToApproveFromChecklistButton;
 	PMVacationApprovePage approveVacationButton;
-	
+	VacationManagementInboxPage vacationManagementIndexPage;
+
 	@Step
-	public void PMVacationApprovePage(){
-		selectItemToApproveFromChecklistButton.clickSelectItemFromChecklistButton();
+	public void PMVacationApprovePage() {
+		approveVacationButton.clickSelectItemFromChecklistButton();
 	}
+
 	@Step
-	public void go_to_PM_Vacation_Approve_Page(){
+	public void go_to_PM_Vacation_Approve_Page() {
 		approveVacationButton.clickApproveVacationButton();
 	}
-	VacationManagementInboxPage vacationManagementIndexPage;
+
 	@Step
 	public void clickVacationManagementItem() {
 		vacationManagementIndexPage.clickVacationManagementItem();
-		
+
 	}
 
+	@Step
+	public void clickVacationApropve() {
+		approveVacationButton.clickApproveVacationButton();
+
+	}
 
 }
