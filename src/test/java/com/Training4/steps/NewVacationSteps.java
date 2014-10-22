@@ -21,6 +21,11 @@ public class NewVacationSteps extends ScenarioSteps {
 	NewVacationPage newvacationpage;
 	NewVacationPage butonul;
 	NewVacationPage newVacationRequestPage;
+	NewVacationPage vacationFara;
+	NewVacationPage special;
+	NewVacationPage sick;
+	NewVacationPage child;
+	NewVacationPage comm;
 	/*@Step
 	public void clickSignInBtn(){
 		loginPage.clickSignIn();
@@ -83,4 +88,31 @@ public class NewVacationSteps extends ScenarioSteps {
 		public void goToCancelButton(){
 			butonul.clickCancelButton();
 		}
+	 
+	 @Step
+		public void goVWithoutPayment(){
+		 vacationFara.clickVWhitoutPay();
+		}
+	 
+	 @Step
+		public void goSpecialVacation(){
+		 special.clickSpecialVacation();
+		}
+	 
+	 @Step
+		public void goSickVacation(){
+		 sick.clickSickVacation();
+		}
+	 
+	 @Step
+		public void chooseChildren(){
+		 child.chooseChildBirth();
+		}
+	 
+	 @Step
+		public void addedComment(){
+			comm.addComment();
+		}
+		
+	 
 }
