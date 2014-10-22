@@ -114,5 +114,9 @@ public class NewVacationSteps extends ScenarioSteps {
 			comm.addComment();
 		}
 		
+	 @Step
+	    public void enters(String keyword) {
+	        comm.enter_comment(keyword);
+	    }
 	 
 }

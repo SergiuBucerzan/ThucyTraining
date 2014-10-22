@@ -21,6 +21,8 @@ import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 import com.Training4.steps.NewVacationSteps;
 
+
+
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
 public class EndUser1Test {
@@ -153,7 +155,7 @@ public class EndUser1Test {
         newVacationRequestSteps.selectStartDate(10, 15, 2014);
         newVacationRequestSteps.selectEndDate(10, 15, 2014);
         commentul.addedComment();
-        
+        commentul.enters("primul comentariu");
          buttonSave.goToSaveButton();
     }
  
