@@ -28,5 +28,9 @@ public class LoginPage extends PageObject {
 	
 	}
 	
+	public void maximizeWindow() {
+        getDriver().manage().window().maximize();
+    }
+	
 
 }
