@@ -9,6 +9,7 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Story;
 import net.thucydides.core.pages.Pages;
+import net.thucydides.core.steps.ScenarioSteps;
 import net.thucydides.junit.runners.ThucydidesRunner;
 
 import org.junit.Test;
@@ -19,17 +20,16 @@ import com.Training4.pages.VacationManagementInboxPage;
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 
-@Story(Application.Search.SearchByKeyword.class)
-@RunWith(ThucydidesRunner.class)
-public class VacationManagementInboxSteps {
-    
-	@Managed(uniqueSession = true)
-    public WebDriver webdriver;
-    
-    @ManagedPages(defaultUrl = Constants.BASE_URL)
-    public Pages pages;
 
-    LoginSteps loginSteps;
+public class VacationManagementInboxSteps  extends ScenarioSteps{
+    
+	
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
     VacationManagementInboxPage vacationManagementInboxPage;
     @Step

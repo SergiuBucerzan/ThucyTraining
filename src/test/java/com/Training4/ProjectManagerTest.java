@@ -15,6 +15,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.Training4.pages.TableViewPage;
+import com.Training4.pages.VacationManagementInboxPage;
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 import com.Training4.steps.PMVacationApproveSteps;
@@ -35,29 +36,34 @@ public class ProjectManagerTest {
 
 	@Steps
 	LoginSteps loginSteps;
-
+	
 	@Steps
-	VacationManagementInboxSteps vacationManagementInboxSteps;
-	@Steps
-	VacationManagementViewVacationPageSteps vacationManagementViewVacationPageSteps;
-	@Steps
-	PMVacationApproveSteps selectItemToApproveFromChecklistButton;
+	VacationManagementInboxSteps vacationInboxSteps;
+	
 	@Steps
 	TableViewSteps tableViewSteps;
+	
 	@Steps
-	PMVacationApproveSteps approveVacationButton;
+	PMVacationApproveSteps vacationApproveSteps;
+	
 	@Steps
-	PMVacationRejectSteps rejectVacationButton;
-
+	VacationManagementViewVacationPageSteps viewVacationSteps;
+	
+	
 	@Test
-	public void create_vacation() {
-		loginSteps.login_and_go_to_vacation(Constants.PM_USER,
-				Constants.PM_PASS);
-		vacationManagementInboxSteps.clickVacationManagementInboxItem();
-		vacationManagementViewVacationPageSteps.clickViewVacationItem();
-		selectItemToApproveFromChecklistButton.clickVacationManagementItem();
-		tableViewSteps.clickTheCheckboxForSpecificRows("Moroianu");
-		approveVacationButton.clickVacationApropve();
-		rejectVacationButton.clickVacationReject();
+	public void view_vacation() {
+	loginSteps.login_and_go_to_vacation(Constants.PM_USER, Constants.PM_PASS);
+//	loginSteps.typeUser(Constants.PM_USER);
+//	loginSteps.typePass(Constants.PM_PASS);
+//	loginSteps.clickSignInBtn();
+//	loginSteps.go_to_vacation();
+	vacationInboxSteps.clickVacationManagementInboxItem();
+	tableViewSteps.clickTheCheckboxForSpecificRows("Moroianu");
+	vacationApproveSteps.clickVacationApropve();
+	viewVacationSteps.clickViewVacationMenuItem();
+	viewVacationSteps.selectVacationTypeCheckbox("Holiday");
+	viewVacationSteps.selectDaysNumberCheckbox("1 - 5");
+	viewVacationSteps.selectVacationStatusCheckbox("Pending");
+	viewVacationSteps.clickApplyButton();
 	}
 }

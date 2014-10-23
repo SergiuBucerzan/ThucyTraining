@@ -39,7 +39,7 @@ public class VacationManagementViewVacationPageTest {
     @Test
     public void create_vacation(){
     	loginSteps.login_and_go_to_vacation(Constants.PM_USER, Constants.PM_PASS);
-    	vvsteps.clickViewVacationItem();
+    	vvsteps.clickViewVacationMenuItem();
     	
     }
 } 
