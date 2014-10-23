@@ -8,6 +8,9 @@ public final class Constants {
 	public static final String DM_USER = "sergiu.bucerzan";
 	public static final String DM_PASS = "sergiu1";
 	
+	public static final String LAST_N = "Bucerzan";
+	public static final String FIRST_N = "Sergiu";
+	
 	public static final String END_USER = "damaris.pop";
 	public static final String END_PASS = "damaris1";
 	

@@ -46,6 +46,16 @@ public class DmUserTest {
 	
 	@Steps
 	VacationsReportSteps vacationsReportSteps;
+	
+	@Steps
+	VacationsReportSteps enterLastName;
+	
+	@Steps
+	VacationsReportSteps enterFirstName;
+	
+	@Steps
+	VacationsReportSteps searchButton;
+	
 
 	// @Test
 		public void successfull_login_test() {
@@ -60,7 +70,7 @@ public class DmUserTest {
 
 	}
 	
-		@Test
+//		@Test
 		public void go_to_vacations_report() {
 			loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
 			vacationsReportSteps.go_to_vacations_report();
@@ -93,4 +103,14 @@ public class DmUserTest {
 			tableViewSteps.verifyThatTableContainsElement("Holiday");
 	}
 	
+		
+		@Test
+		public void search_by_name(){
+			loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
+			vacationsReportSteps.go_to_vacations_report();
+			enterLastName.type_last_name(Constants.LAST_N);
+			enterFirstName.type_first_name(Constants.FIRST_N);
+			searchButton.click_search_button();
+			tableViewSteps.verifyThatTableContainsElement("Sergiu Bucerzan");
+			}
 }
