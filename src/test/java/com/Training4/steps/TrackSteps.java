@@ -50,8 +50,7 @@ public class TrackSteps extends ScenarioSteps {
 	// }
 
 	@Step
-	public void selectAnItemFromADropDownList(String dropDownListName,
-			String value) {
+	public void selectAnItemFromADropDownList(String dropDownListName, String value) {
 		trackPage.selectAnItemFromADropDownList(dropDownListName, value);
 	}
 
