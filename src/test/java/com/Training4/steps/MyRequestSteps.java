@@ -104,6 +104,14 @@ public class MyRequestSteps extends ScenarioSteps {
 		myrequestspage.verifyThatDatesAreAscendentSorted();
 	}
 	
+	@Step
+	public void select_startDate() {
+		myrequestspage.clickStartDate();
+	}
 
-
+	@Step
+	public void verifyThatDatesAreDescendentSorted() throws ParseException, java.text.ParseException{
+		myrequestspage.verifyThatDatesAreDescendentSorted();
+	}
+	
 }

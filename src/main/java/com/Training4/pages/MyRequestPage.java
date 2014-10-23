@@ -48,6 +48,9 @@ public class MyRequestPage extends PageObject {
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElement apply;
 
+	@FindBy(css = "a[href*='orderByCol=startDate']")
+	private WebElement startDate;
+
 	public void clickMyRequestItem() {
 		element(myRequestItem).waitUntilVisible();
 		myRequestItem.click();
@@ -154,7 +157,8 @@ public class MyRequestPage extends PageObject {
 		List<Date> listOfDates = new ArrayList<Date>();
 		for (WebElement data : dataList) {
 			System.out.println(data.getText());
-			listOfDates.add((Date) stringToDate(data.getText())); // aici e bai!!
+			listOfDates.add((Date) stringToDate(data.getText())); // aici e
+																	// bai!!
 		}
 		return listOfDates;
 
@@ -166,7 +170,8 @@ public class MyRequestPage extends PageObject {
 		List<Date> list = returnDataList();
 		for (int i = 0; i < list.size() - 2; i++) { // sau list.size()-2 avand
 													// in vedere ca compara i cu
-													// i+1 si sa nu dea outOfIndex
+													// i+1 si sa nu dea
+													// outOfIndex
 			Date current = list.get(i);
 			Date next = list.get(i + 1);
 			Assert.assertTrue("Dates are not ascending!!!!",
@@ -174,4 +179,27 @@ public class MyRequestPage extends PageObject {
 		}
 
 	}
+
+	public void clickStartDate() {
+		element(startDate).waitUntilVisible();
+		startDate.click();
+	}
+
+	public void verifyThatDatesAreDescendentSorted() throws ParseException,
+			java.text.ParseException {
+
+		List<Date> list = returnDataList();
+		for (int i = 0; i > list.size() - 2; i++) { // sau list.size()-2 avand
+													// in vedere ca compara i cu
+													// i+1 si sa nu dea
+													// outOfIndex
+			Date current = list.get(i);
+			Date next = list.get(i + 1);
+			Assert.assertTrue("Dates are not descending!!!!",
+					current.compareTo(next) > 0);
+		System.out.println("data este" + current);
+		}
+
+	}
+
 }

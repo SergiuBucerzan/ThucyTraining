@@ -59,7 +59,8 @@ public class EndUserTest {
     	myRequestSteps.checkVacationDaysNumberNotContain(1,5);
     	myRequestSteps.checkVacationStatusDoesNotContain("Approved");
     	myRequestSteps.verifyThatDatesAreAscendentSorted();
-    
+    	myRequestSteps.select_startDate();
+        myRequestSteps.verifyThatDatesAreDescendentSorted();
     }
  
 } 
