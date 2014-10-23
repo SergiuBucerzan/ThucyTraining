@@ -2,6 +2,7 @@ package com.Training4.pages;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -189,17 +190,27 @@ public class MyRequestPage extends PageObject {
 			java.text.ParseException {
 
 		List<Date> list = returnDataList();
-		for (int i = 0; i > list.size() - 2; i++) { // sau list.size()-2 avand
-													// in vedere ca compara i cu
-													// i+1 si sa nu dea
-													// outOfIndex
-			Date current = list.get(i);
-			Date next = list.get(i + 1);
-			Assert.assertTrue("Dates are not descending!!!!",
-					current.compareTo(next) > 0);
-		System.out.println("data este" + current);
-		}
+		List<Date> orderedList = new ArrayList<Date>(list);
+		
+		orderedList.sort( new DateComparator());
+		
+		Assert.assertTrue("Dates are not descending!!!!", list.equals(orderedList));
+		
+		
+		
+//		for (int i = 0; i > list.size() - 2; i++) { // sau list.size()-2 avand
+//													// in vedere ca compara i cu
+//													// i+1 si sa nu dea
+//													// outOfIndex
+//			Date current = list.get(i);
+//			Date next = list.get(i + 1);
+//			Assert.assertTrue("Dates are not descending!!!!",
+//					current.compareTo(next) > 0);
+//			System.out.println("data este" + current);
+//		}
+
 
 	}
+
 
 }
