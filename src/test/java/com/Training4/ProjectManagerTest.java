@@ -46,6 +46,10 @@ public class ProjectManagerTest {
 	@Steps
 	PMVacationApproveSteps vacationApproveSteps;
 	
+// this step enables the reject Button
+//	@Steps
+//	PMVacationRejectSteps vacationRejectSteps;
+	
 	@Steps
 	VacationManagementViewVacationPageSteps viewVacationSteps;
 	
@@ -60,6 +64,7 @@ public class ProjectManagerTest {
 	vacationInboxSteps.clickVacationManagementInboxItem();
 	tableViewSteps.clickTheCheckboxForSpecificRows("Moroianu");
 	vacationApproveSteps.clickVacationApropve();
+//	vacationRejectSteps.clickVacationReject();
 	viewVacationSteps.clickViewVacationMenuItem();
 	viewVacationSteps.selectVacationTypeCheckbox("Holiday");
 	viewVacationSteps.selectDaysNumberCheckbox("1 - 5");
