@@ -11,6 +11,8 @@ import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 import net.thucydides.core.pages.WebElementFacade;
 
+import org.junit.Assert;
+import org.openqa.selenium.By.ByCssSelector;
 import org.openqa.selenium.WebElement;
 
 public class NewVacationPage extends PageObject {
@@ -26,6 +28,12 @@ public class NewVacationPage extends PageObject {
 
 	@FindBy(css = "h1.header-title span")
 	private WebElement contentTitle;
+	
+	@FindBy(css ="div[class='view-vacation']")
+	private WebElement contentT;
+	
+	@FindBy(css ="div[class='content-title']")
+	private WebElement content;
 	
 	@FindBy(css = ".action-buttons")
 	private WebElement contentTitl;
@@ -69,6 +77,13 @@ public class NewVacationPage extends PageObject {
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_editVacationRequest")
 	private WebElementFacade edit;
 
+    @FindBy(css="input[name='startDate']")
+	    private WebElementFacade startDate;
+	 
+	@FindBy(css="#_evovacation_WAR_EvoVacationportlet_endDate")
+	    private WebElementFacade endDate;
+	
+	
 	public void chooseChildBirth() {
 		childbirthvacation.click();
 
@@ -77,6 +92,16 @@ public class NewVacationPage extends PageObject {
 	public void addComment() {
 		comment.click();
 
+	}
+	
+	public void checkState(){
+		String VacationRequst = "Vacation Request";
+		boolean found = false;
+		
+		if(contentT.getText().contains(VacationRequst)){
+			found = true;
+		}
+		Assert.assertTrue("The text was not found",found);
 	}
 
 	public void clickNewVacation() {
@@ -92,6 +117,11 @@ public class NewVacationPage extends PageObject {
 	public String getContentTitl() {
 		element(contentTitl).waitUntilVisible();
 		return contentTitl.getText();
+	}
+	
+	public String getContentT() {
+		element(content).waitUntilVisible();
+		return content.getText();
 	}
 
 	public void clickStartDateBox() {
@@ -130,7 +160,7 @@ public class NewVacationPage extends PageObject {
 				By.cssSelector("div[style*='block'] td"));
 		for (WebElement currentDay : days) {
 			if (currentDay.getText().toLowerCase()
-					.contains(String.valueOf(day).toLowerCase()))
+					.contentEquals(String.valueOf(day).toLowerCase()))
 				currentDay.click();
 		}
 	}
@@ -173,5 +203,16 @@ public class NewVacationPage extends PageObject {
 
 	public void clickEdit() {
 		edit.click();
+		waitABit(5000);
+	}
+	
+	public void clickStartDate() {
+		waitABit(3000);
+		getDriver().switchTo().frame(getDriver().findElement(By.cssSelector("div[aria-hidden='false'] iframe[src*='editVacation']")));
+		startDate.click();
+	}
+
+	public void clickEndDate() {
+		endDate.click();
 	}
 }

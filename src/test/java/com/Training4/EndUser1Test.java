@@ -48,12 +48,12 @@ public class EndUser1Test {
 		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
 				Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
-		Assert.assertEquals("Create a new vacation request",
-				newVacationSteps.get_content_title());
-
-		newVacationRequestSteps.selectStartDate(10, 15, 2014);
-		newVacationRequestSteps.selectEndDate(10, 15, 2014);
+		
+		Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+		newVacationRequestSteps.selectStartDate(1, 14, 2015);
+		newVacationRequestSteps.selectEndDate(1, 14, 2015);
 		newVacationSteps.goToSaveButton();
+		newVacationSteps.get_content_t(); //verific state vacation request
 	}
 
 	// @Test
@@ -62,11 +62,11 @@ public class EndUser1Test {
 		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
 				Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
-		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-
-		newVacationRequestSteps.selectStartDate(1, 22, 2014);
-		newVacationRequestSteps.selectEndDate(1, 22, 2014);
-		newVacationSteps.goToSaveButton();
+	    Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+		newVacationRequestSteps.selectStartDate(1, 27, 2014);
+		newVacationRequestSteps.selectEndDate(1, 27, 2014);
+		newVacationSteps.goToCancelButton();
+		Assert.assertEquals("Filter requests",newVacationSteps.get_content());
 	}
 
 	// @Test
@@ -81,6 +81,7 @@ public class EndUser1Test {
 		newVacationRequestSteps.selectEndDate(1, 22, 2014);
 		newVacationSteps.goVWithoutPayment();
 		newVacationSteps.goToSaveButton();
+		newVacationSteps.get_content_t();
 	}
 
 	// @Test
@@ -159,11 +160,14 @@ public class EndUser1Test {
 				Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
 	    Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-		newVacationRequestSteps.selectStartDate(8, 19, 2014);
-		newVacationRequestSteps.selectEndDate(8, 19, 2014);
+		newVacationRequestSteps.selectStartDate(5, 19, 2014);
+		newVacationRequestSteps.selectEndDate(5, 19, 2014);
 		newVacationSteps.goToSaveButton();
 		newVacationSteps.goEdit();
-	
+		newVacationSteps.selectStartD(5, 20, 2014);
+		newVacationSteps.selectEndD(5, 20, 2014);
+		newVacationSteps.goVWithoutPayment();
+		newVacationSteps.goToSaveButton();
 	}
 
 }

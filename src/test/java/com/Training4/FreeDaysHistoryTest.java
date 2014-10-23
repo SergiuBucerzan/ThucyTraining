@@ -19,36 +19,32 @@ import com.Training4.steps.FreeDaysHistorySteps;
 import com.Training4.steps.LoginSteps;
 import com.Training4.tools.Constants;
 
-
-
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-
 public class FreeDaysHistoryTest {
-    
-	@Managed(uniqueSession = true)
-    public WebDriver webdriver;
-    
-    @ManagedPages(defaultUrl = Constants.BASE_URL)
-    public Pages pages;
-    
-    @Steps
-    LoginSteps loginSteps;
-    
-    
-    @Steps
-    FreeDaysHistorySteps freeDaysH;
-    
-    @Test
-    public void view_freedays() throws ParseException{
 
-    	loginSteps.login_and_go_to_vacation(Constants.END_USER1, Constants.END_PASS1);
-    	freeDaysH.goToFreeDays();
-    	Assert.assertEquals("Filter History",freeDaysH.get_content_title());
-        freeDaysH.select_Holiday();
-        freeDaysH.select_OneToFive();
-        freeDaysH.select_ApprovedStatus();
-        freeDaysH.select_ApplyButton();
-        freeDaysH.select_Filter("75");
-    }
+	@Managed(uniqueSession = true)
+	public WebDriver webdriver;
+
+	@ManagedPages(defaultUrl = Constants.BASE_URL)
+	public Pages pages;
+
+	@Steps
+	LoginSteps loginSteps;
+
+	@Steps
+	FreeDaysHistorySteps freeDaysH;
+
+	@Test
+	public void view_freedays() throws ParseException {
+
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,Constants.END_PASS1);
+		freeDaysH.goToFreeDays();
+		Assert.assertEquals("Filter History", freeDaysH.get_content_title());
+		freeDaysH.select_Holiday();
+		freeDaysH.select_OneToFive();
+		freeDaysH.select_ApprovedStatus();
+		freeDaysH.select_ApplyButton();
+		freeDaysH.select_Filter("75");
+	}
 }
