@@ -12,9 +12,7 @@ import com.Training4.pages.VacationManagementInboxPage;
 public class PMVacationApproveSteps extends ScenarioSteps {
 
 	private static final long serialVersionUID = 1L;
-	LoginPage loginPage;
-	MainMenuPage mainMenuPage;
-	NewVacationPage newVacationRequestPage;
+	
 	PMVacationApprovePage approveVacationButton;
 	VacationManagementInboxPage vacationManagementIndexPage;
 

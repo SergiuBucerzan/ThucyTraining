@@ -18,6 +18,7 @@ import org.openqa.selenium.WebDriver;
 import com.Training4.requirements.Application;
 import com.Training4.steps.LoginSteps;
 import com.Training4.steps.MyRequestSteps;
+import com.google.protobuf.TextFormat.ParseException;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
@@ -36,7 +37,7 @@ public class EndUserTest {
     MyRequestSteps myRequestSteps;
     
     @Test
-    public void create_vacation(){
+    public void create_vacation() throws ParseException, java.text.ParseException{
     	loginSteps.login_and_go_to_vacation(Constants.END_USER, Constants.END_PASS);
     	myRequestSteps.go_to_MyRequestPage();
     	
@@ -57,6 +58,9 @@ public class EndUserTest {
     	myRequestSteps.checkVatationTypeDoesNotContain("Special Vacation");
     	myRequestSteps.checkVacationDaysNumberNotContain(1,5);
     	myRequestSteps.checkVacationStatusDoesNotContain("Approved");
+    	myRequestSteps.verifyThatDatesAreAscendentSorted();
+    	myRequestSteps.select_startDate();
+        myRequestSteps.verifyThatDatesAreDescendentSorted();
     }
  
 } 

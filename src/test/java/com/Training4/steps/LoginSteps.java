@@ -9,6 +9,10 @@ import com.Training4.pages.MainMenuPage;
 
 public class LoginSteps extends ScenarioSteps {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
 	
