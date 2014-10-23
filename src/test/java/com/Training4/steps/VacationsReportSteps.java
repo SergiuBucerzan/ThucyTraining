@@ -14,6 +14,9 @@ public class VacationsReportSteps extends ScenarioSteps {
 	VacationsReportPage enterLastName;
 	VacationsReportPage enterFirstName;
 	VacationsReportPage searchButton;
+	VacationsReportPage exportMonth;
+	VacationsReportPage exportYear;
+	VacationsReportPage exportButton;
 	
 	
 	@Step
@@ -36,6 +39,19 @@ public class VacationsReportSteps extends ScenarioSteps {
 		searchButton.clickSearchButton();
 	}
 	
-
-	
+//	@Step
+//	public void select_month(){
+//		exportMonth.selectMonth();
+//		
+//	}
+//	
+//	@Step
+//	public void select_year(){
+//		exportYear.selectYear();
+//	}
+//	
+//	@Step
+//	public void click_export_button(){
+//		exportButton.clickExportButton();
+//	}
 }

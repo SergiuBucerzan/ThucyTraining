@@ -56,6 +56,15 @@ public class DmUserTest {
 	@Steps
 	VacationsReportSteps searchButton;
 	
+	@Steps
+	VacationsReportSteps exportMonth;
+	
+	@Steps
+	VacationsReportSteps exportYear;
+	
+	@Steps
+	VacationsReportSteps exportButton;
+	
 
 	// @Test
 		public void successfull_login_test() {
@@ -113,4 +122,15 @@ public class DmUserTest {
 			searchButton.click_search_button();
 			tableViewSteps.verifyThatTableContainsElement("Sergiu Bucerzan");
 			}
+		
+//		@Test
+		public void export_vacations(){
+			loginSteps.login_and_go_to_vacation(Constants.DM_USER, Constants.DM_PASS);
+			vacationsReportSteps.go_to_vacations_report();
+//			exportMonth.select_month();    // not finished
+//			exportYear.select_year();      // not finished
+			trackSteps.selectAnItemFromADropDownList("August" , "2014");
+//			exportButton.click_export_button();
+			
+		}
 }

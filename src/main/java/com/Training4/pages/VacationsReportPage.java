@@ -26,11 +26,14 @@ public class VacationsReportPage extends PageObject{
 	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_searchButton']")
 	private WebElement searchButton;
 	
-	@FindBy(css = "select[name='_evovacation_WAR_EvoVacationportlet_exportMonth']")
+	@FindBy(css = "select[name='_evovacation_WAR_EvoVacationportlet_exportMonth'] option:nth-child(8)")
 	private WebElement exportMonth;
 	
-	@FindBy(css = "select[name='_evovacation_WAR_EvoVacationportlet_exportYear']")
+	@FindBy(css = "select[name='_evovacation_WAR_EvoVacationportlet_exportYear'] option:nth-child(9)")
 	private WebElement exportYear;
+	
+	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_exportButton']")
+	private WebElement exportButton;
 
 	public void clickVacationsReport() {
 		element(vacationReport).waitUntilVisible();
@@ -51,7 +54,22 @@ public class VacationsReportPage extends PageObject{
 		searchButton.click();
 	}
 	
+	public void selectMonth(){
+		element(exportMonth);
+		waitABit(2000);
+		exportMonth.click();
+	}
 	
-
+	public void selectYear(){
+		element(exportYear);
+		waitABit(2000);
+		exportYear.click();
+	}
+	public void clickExportButton(){
+		element(exportButton).waitUntilVisible();
+		exportButton.click();
+	}
+	
+	
 	
 }
