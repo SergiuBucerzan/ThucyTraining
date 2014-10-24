@@ -27,13 +27,46 @@ public class MyRequestPage extends PageObject {
 
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_HOLIDAYCheckbox")
 	private WebElement holidayBox;
-
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_SPECIAL_VACATIONCheckbox")
+	private WebElement specialVacationBox;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_SICK_LEAVECheckbox")
+	private WebElement SickLeaveBox;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_VACATION_WITHOUT_PAYMENTCheckbox")
+	private WebElement VacationWithoutPaymentBox;
+	
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_FIFTHCheckbox")
 	private WebElement onetofive;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_TENTHCheckbox")
+	private WebElement sixtoten;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_TWENTIETHCheckbox")
+	private WebElement eleventotwenty;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_FIFTIETHCheckbox")
+	private WebElement twentyone;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_RESTCheckbox")
+	private WebElement fiftyone;
 
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_APPROVEDCheckbox")
 	private WebElement ApprovedStatus;
 
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_PENDINGCheckbox")
+	private WebElement pendingStatus;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_REJECTEDCheckbox")
+	private WebElement rejectedStatus;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_WITHDRAWNCheckbox")
+	private WebElement withdrawStatus;
+	
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_CANCELLEDCheckbox")
+	private WebElement cancelledStatus;
+	
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElement applyButton;
 
@@ -101,6 +134,61 @@ public class MyRequestPage extends PageObject {
 		element(apply).waitUntilVisible();
 		apply.click();
 	}
+		
+	public void clickElevenToTwenty(){
+			element(eleventotwenty).waitUntilVisible();
+			eleventotwenty.click();
+	}
+
+	public void clickTwentyOne(){
+		element(twentyone).waitUntilVisible();
+		twentyone.click();
+}
+	
+	public void clickFiftyOne(){
+		element(fiftyone).waitUntilVisible();
+		fiftyone.click();
+}
+	
+	public void clickPendingStatus(){
+		element(pendingStatus).waitUntilVisible();
+		pendingStatus.click();
+}
+	
+	public void clickRejectedStatus(){
+		element(rejectedStatus).waitUntilVisible();
+		rejectedStatus.click();
+}
+	
+	public void clickWithdrawStatus(){
+		element(withdrawStatus).waitUntilVisible();
+		withdrawStatus.click();
+}
+	
+	public void clickCancelledStatus(){
+		element(cancelledStatus).waitUntilVisible();
+		cancelledStatus.click();
+}
+	
+	public void clickSpecialVacationBox(){
+		element(specialVacationBox).waitUntilVisible();
+		specialVacationBox.click();
+}	
+	
+	public void clickSickLeaveBox(){
+		element(SickLeaveBox).waitUntilVisible();
+		SickLeaveBox.click();
+}
+	
+	public void clickSixToTen(){
+		element(sixtoten).waitUntilVisible();
+		sixtoten.click();
+}
+	public void clickVacationWithoutPayment(){
+		element(VacationWithoutPaymentBox).waitUntilVisible();
+		VacationWithoutPaymentBox.click();
+}
+	
 
 	public List<String> returnVacationTypeList() {
 		List<WebElement> vacationTypeList = getDriver().findElements(
@@ -212,5 +300,90 @@ public class MyRequestPage extends PageObject {
 
 	}
 
+	public List<String> returnVacTypeList() {
+		List<WebElement> vacTypeList = getDriver().findElements(
+				By.cssSelector("div[class='aui-column-content aui-column-content-first column-three-content ']"));
+		List<String> vacationTypeStrList = new ArrayList<String>();
+		for (WebElement i : vacTypeList) {
+			vacationTypeStrList.add(i.getText());
+		}
+		return vacationTypeStrList;
+	}
 
+	public List<String> returnVacationDayNumberList() {
+		List<WebElement> vacationDayNumberList = getDriver().findElements(
+				By.cssSelector("div[class='aui-column-content column-three-content column-center-content ']"));
+		List<String> vacationDayNumList = new ArrayList<String>();
+		for (WebElement i : vacationDayNumberList) {
+			vacationDayNumList.add(i.getText());
+		}
+		return vacationDayNumList;
+	}
+	
+	public List<String> returnvacaStatusList() {
+		List<WebElement> vacStatusList = getDriver().findElements(
+				By.cssSelector("div[class='aui-column column-three column-center aui-column-last']"));
+		List<String> vacationStatusStrList = new ArrayList<String>();
+		for (WebElement i : vacStatusList) {
+			vacationStatusStrList.add(i.getText());
+		}
+		return vacationStatusStrList;
+	}
+	
+	public void selectOperation(String type) {
+	 boolean found = false;
+	   List<WebElement> elements = getDriver().findElements(By.cssSelector("div[class='aui-column-content aui-column-content-first column-three-content '] div div[class='column-content'] label"));
+	   for (WebElement element : elements) {
+	    System.out.println(element.getText());
+
+	    if (element.getText().replaceAll("\\s","").toLowerCase()
+	    		.equals(type.replaceAll("\\s","").toLowerCase())) {
+	     found = true;
+	     if (!element.isSelected())
+	      element.click();
+	     break;
+	    }
+
+	   }
+	   Assert.assertTrue("type not found", found);
+	  }
+	
+	public void selectDaysNumber(String day) {
+		 boolean found = false;
+		   List<WebElement> elements = getDriver().findElements(By.cssSelector("div[class='aui-column-content column-three-content column-center-content '] div div[class='column-content'] label"));
+		   for (WebElement element : elements) {
+		    System.out.println(element.getText());
+
+		    if (element.getText().replaceAll("\\s","").toLowerCase()
+		    		.equals(day.replaceAll("\\s","").toLowerCase())) {
+		     found = true;
+		     if (!element.isSelected())
+		      element.click();
+		     break;
+		    }
+
+		   }
+		   Assert.assertTrue("days not found", found);
+		  }
+	
+	public void selectStatus(String status) {
+		 boolean found = false;
+		   List<WebElement> elements = getDriver().findElements(By.cssSelector("div[class='aui-column-content column-three-content column-center-content '] div div[class='column-content'] label"));
+		   for (WebElement element : elements) {
+		    System.out.println(element.getText());
+
+		    if (element.getText().replaceAll("\\s","").toLowerCase()
+		    		.equals(status.replaceAll("\\s","").toLowerCase())) {
+		     found = true;
+		     if (!element.isSelected())
+		      element.click();
+		     break;
+		    }
+
+		   }
+		   Assert.assertTrue("status not found", found);
+		  }
 }
+
+
+
