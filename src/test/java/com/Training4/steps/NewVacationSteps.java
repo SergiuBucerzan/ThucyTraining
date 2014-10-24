@@ -132,12 +132,17 @@ public class NewVacationSteps extends ScenarioSteps {
 	}
 	
 	@Step
-	public void selectName(String user, String pass,String mailul){
+	public void selectName(String user, String pass,String name,String startdate,String enddate){
 		String bodymail= verifyname.verifyEmail(user, pass);
-//	Assert.assertTrue("The text was not found", bodymail.contains(name));
-//		Assert.assertTrue("The text was not ", bodymail.contains(startdate));
-//		Assert.assertTrue("The text was not f", bodymail.contains(enddate));
-		 Assert.assertTrue("The text was not f", bodymail.contains(mailul));
+//		 String name="Raluca";
+//		 String startdate="20/May/2015";
+//		 String enddate="20/May/2015";
+		// String mailul="Dear "+ name+ ", <br /><br />You have submitted a new Vacation Request. Your holiday interval is: <strong>"+startdate+"</strong> - <strong>"+enddate+"</strong>.<br />Please check if the request was approved before going on holiday, if not please contact your vacation approver, Mihai Arsin.<br/> <br/> Cheers, <br /> The EvoPortal Team";
+	Assert.assertTrue("The text was not found", bodymail.contains(name));
+		Assert.assertTrue("The text was not ", bodymail.contains(startdate));
+		Assert.assertTrue("The text was not f", bodymail.contains(enddate));
+		// Assert.assertTrue("The text was not found", bodymail.contentEquals(mailul));
+		
 	}
 	
 	

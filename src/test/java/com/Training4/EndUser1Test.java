@@ -50,18 +50,17 @@ public class EndUser1Test {
 	@Test
 	public void create_vacations() throws ParseException {
 
-//		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
-//				Constants.END_PASS1);
-//		newVacationSteps.goToNewVacation();
-//		
-//		Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-//		newVacationRequestSteps.selectStartDate(5, 7, 2015);
-//		newVacationRequestSteps.selectEndDate(5, 7, 2015);
+	//	loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+//			Constants.END_PASS1);
+	//	newVacationSteps.goToNewVacation();
+		
+	//	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+//		newVacationRequestSteps.selectStartDate(5, 20, 2015);
+//		newVacationRequestSteps.selectEndDate(5, 20, 2015);
 //		newVacationSteps.goToSaveButton();
 //		newVacationSteps.get_content_t(); //verific state vacation request
-	
-		numeEmail.selectName(EvozonEmail.END_USER1EMAIL, EvozonEmail.END_PASS1EMAIL,"Dear Raluca, <br /><br />You have submitted a new Vacation Request. Your holiday interval is: <strong>7/May/2015</strong> - <strong>7/May/2015</strong>.<br />Please check if the request was approved before going on holiday, if not please contact your vacation approver, Mihai Arsin.<br/> <br/> Cheers, <br /> The EvoPortal Team");
-		
+//	
+		numeEmail.selectName(EvozonEmail.END_USER1EMAIL, EvozonEmail.END_PASS1EMAIL,"Raluca","20/May/2015","20/May/2015");
 	}
 
 	// @Test
