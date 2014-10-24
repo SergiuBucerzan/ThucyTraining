@@ -1,11 +1,9 @@
 package com.Training4.steps;
 
-import com.Training4.pages.TrackPage;
-import com.Training4.pages.VacationsReportPage;
-
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
+
+import com.Training4.pages.VacationsReportPage;
 
 public class VacationsReportSteps extends ScenarioSteps {
 	private static final long serialVersionUID = 1L;
@@ -14,6 +12,11 @@ public class VacationsReportSteps extends ScenarioSteps {
 	VacationsReportPage enterLastName;
 	VacationsReportPage enterFirstName;
 	VacationsReportPage searchButton;
+	VacationsReportPage exportMonth;
+	VacationsReportPage exportYear;
+	VacationsReportPage exportButton;
+	VacationsReportPage clickName;
+	
 	
 	
 	@Step
@@ -36,6 +39,24 @@ public class VacationsReportSteps extends ScenarioSteps {
 		searchButton.clickSearchButton();
 	}
 	
-
+	@Step
+	public void select_month(){
+		exportMonth.selectMonth();
+		
+	}
 	
+	@Step
+	public void select_year(){
+		exportYear.selectYear();
+	}
+	
+	@Step
+	public void click_export_button(){
+		exportButton.clickExportButton();
+	}
+	
+	@Step
+	public void click_on_name(){
+		clickName.clickUserName();
+	}
 }

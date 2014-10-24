@@ -5,9 +5,12 @@ import java.text.ParseException;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
+import org.junit.Assert;
+
 import com.Training4.pages.LoginPage;
 import com.Training4.pages.MainMenuPage;
 import com.Training4.pages.NewVacationPage;
+import com.Training4.tools.ReadEmail;
 
 public class NewVacationSteps extends ScenarioSteps {
 
@@ -24,7 +27,8 @@ public class NewVacationSteps extends ScenarioSteps {
 	NewVacationPage comm;
 	NewVacationPage withDraw;
 	NewVacationPage editbutton;
-
+	ReadEmail verifyname;
+	
 	@Step
 	public void goToNewVacation() {
 		newvacationpage.clickNewVacation();
@@ -56,7 +60,7 @@ public class NewVacationSteps extends ScenarioSteps {
 		newVacationRequestPage.setDate(month, day, year);
 
 	}
-
+    @Step
 	public void selectEndDate(int month, int day, int year)throws ParseException {
 		newVacationRequestPage.clickEndDateBox();
 		newVacationRequestPage.setDate(month, day, year);
@@ -119,10 +123,27 @@ public class NewVacationSteps extends ScenarioSteps {
 		newVacationRequestPage.setDate(month, day, year);
 
 	}
-
+    
+	@Step
 	public void selectEndD(int month, int day, int year)throws ParseException {
 		newVacationRequestPage.clickEndDate();
 		newVacationRequestPage.setDate(month, day, year);
 
 	}
+	
+	@Step
+	public void selectName(String user, String pass,String name,String startdate,String enddate){
+		String bodymail= verifyname.verifyEmail(user, pass);
+//		 String name="Raluca";
+//		 String startdate="20/May/2015";
+//		 String enddate="20/May/2015";
+		// String mailul="Dear "+ name+ ", <br /><br />You have submitted a new Vacation Request. Your holiday interval is: <strong>"+startdate+"</strong> - <strong>"+enddate+"</strong>.<br />Please check if the request was approved before going on holiday, if not please contact your vacation approver, Mihai Arsin.<br/> <br/> Cheers, <br /> The EvoPortal Team";
+	Assert.assertTrue("The text was not found", bodymail.contains(name));
+		Assert.assertTrue("The text was not ", bodymail.contains(startdate));
+		Assert.assertTrue("The text was not f", bodymail.contains(enddate));
+		// Assert.assertTrue("The text was not found", bodymail.contentEquals(mailul));
+		
+	}
+	
+	
 }

@@ -97,7 +97,6 @@ public class NewVacationPage extends PageObject {
 	public void checkState(){
 		String VacationRequst = "Vacation Request";
 		boolean found = false;
-		
 		if(contentT.getText().contains(VacationRequst)){
 			found = true;
 		}
