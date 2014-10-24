@@ -1,7 +1,8 @@
 package com.Training4;
 
 import java.text.ParseException;
-
+import com.Training4.tools.ReadEmail;
+import com.Training4.tools.EvozonEmail;
 import net.thucydides.core.annotations.Managed;
 
 import com.Training4.tools.Constants;
@@ -40,20 +41,27 @@ public class EndUser1Test {
 	@Steps
 	NewVacationSteps newVacationRequestSteps;
 
+	@Steps
+	ReadEmail newEmail;
 	
+	@Steps
+	NewVacationSteps numeEmail;
 
-	// @Test
+	@Test
 	public void create_vacations() throws ParseException {
 
-		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
-				Constants.END_PASS1);
-		newVacationSteps.goToNewVacation();
+//		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
+//				Constants.END_PASS1);
+//		newVacationSteps.goToNewVacation();
+//		
+//		Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+//		newVacationRequestSteps.selectStartDate(5, 7, 2015);
+//		newVacationRequestSteps.selectEndDate(5, 7, 2015);
+//		newVacationSteps.goToSaveButton();
+//		newVacationSteps.get_content_t(); //verific state vacation request
+	
+		numeEmail.selectName(EvozonEmail.END_USER1EMAIL, EvozonEmail.END_PASS1EMAIL,"Dear Raluca, <br /><br />You have submitted a new Vacation Request. Your holiday interval is: <strong>7/May/2015</strong> - <strong>7/May/2015</strong>.<br />Please check if the request was approved before going on holiday, if not please contact your vacation approver, Mihai Arsin.<br/> <br/> Cheers, <br /> The EvoPortal Team");
 		
-		Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-		newVacationRequestSteps.selectStartDate(1, 14, 2015);
-		newVacationRequestSteps.selectEndDate(1, 14, 2015);
-		newVacationSteps.goToSaveButton();
-		newVacationSteps.get_content_t(); //verific state vacation request
 	}
 
 	// @Test
@@ -153,7 +161,7 @@ public class EndUser1Test {
 		Assert.assertEquals("There are no actions for a Withdrawn vacation.",newVacationSteps.get_content_titl());
 	}
 
-	@Test
+	//@Test
 	public void create_vacations_and_edit() throws ParseException {
 
 		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
