@@ -1,13 +1,9 @@
 package com.Training4.pages;
 
+import java.util.List;
+
 import net.thucydides.core.annotations.findby.By;
 import net.thucydides.core.annotations.findby.FindBy;
-import ch.lambdaj.function.convert.Converter;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
 import net.thucydides.core.pages.PageObject;
 import net.thucydides.core.pages.WebElementFacade;
 
