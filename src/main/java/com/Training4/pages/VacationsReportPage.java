@@ -34,6 +34,9 @@ public class VacationsReportPage extends PageObject{
 	
 	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_exportButton']")
 	private WebElement exportButton;
+	
+	@FindBy(css = "a[href*='uId=139431']")
+	private WebElement clickName;
 
 	public void clickVacationsReport() {
 		element(vacationReport).waitUntilVisible();
@@ -56,13 +59,11 @@ public class VacationsReportPage extends PageObject{
 	
 	public void selectMonth(){
 		element(exportMonth);
-		waitABit(2000);
 		exportMonth.click();
 	}
 	
 	public void selectYear(){
 		element(exportYear);
-		waitABit(2000);
 		exportYear.click();
 	}
 	public void clickExportButton(){
@@ -70,6 +71,8 @@ public class VacationsReportPage extends PageObject{
 		exportButton.click();
 	}
 	
-	
+	public void clickUserName(){
+		clickName.click();
+	}
 	
 }
