@@ -18,15 +18,7 @@ public class NewVacationSteps extends ScenarioSteps {
 	LoginPage loginPage;
 	MainMenuPage mainMenuPage;
 	NewVacationPage newvacationpage;
-	NewVacationPage butonul;
-	NewVacationPage newVacationRequestPage;
-	NewVacationPage vacationFara;
-	NewVacationPage special;
-	NewVacationPage sick;
-	NewVacationPage child;
-	NewVacationPage comm;
-	NewVacationPage withDraw;
-	NewVacationPage editbutton;
+	
 	ReadEmail verifyname;
 	
 	@Step
@@ -56,78 +48,78 @@ public class NewVacationSteps extends ScenarioSteps {
 
 	@Step
 	public void selectStartDate(int month, int day, int year)throws ParseException {
-		newVacationRequestPage.clickStartDateBox();
-		newVacationRequestPage.setDate(month, day, year);
+		newvacationpage.clickStartDateBox();
+		newvacationpage.setDate(month, day, year);
 
 	}
     @Step
 	public void selectEndDate(int month, int day, int year)throws ParseException {
-		newVacationRequestPage.clickEndDateBox();
-		newVacationRequestPage.setDate(month, day, year);
+    	newvacationpage.clickEndDateBox();
+    	newvacationpage.setDate(month, day, year);
 
 	}
 
 	@Step
 	public void goToSaveButton() {
-		butonul.clickSaveButton();
+		newvacationpage.clickSaveButton();
 	}
 
 	@Step
 	public void goToCancelButton() {
-		butonul.clickCancelButton();
+		newvacationpage.clickCancelButton();
 	}
 
 	@Step
 	public void goVWithoutPayment() {
-		vacationFara.clickVWhitoutPay();
+		newvacationpage.clickVWhitoutPay();
 	}
 
 	@Step
 	public void goSpecialVacation() {
-		special.clickSpecialVacation();
+		newvacationpage.clickSpecialVacation();
 	}
 
 	@Step
 	public void goSickVacation() {
-		sick.clickSickVacation();
+		newvacationpage.clickSickVacation();
 	}
 
 	@Step
 	public void chooseChildren() {
-		child.chooseChildBirth();
+		newvacationpage.chooseChildBirth();
 	}
 
 	@Step
 	public void addedComment() {
-		comm.addComment();
+		newvacationpage.addComment();
 	}
 
 	@Step
 	public void enters(String keyword) {
-		comm.enter_comment(keyword);
+		newvacationpage.enter_comment(keyword);
 	}
 
 	@Step
 	public void goWithdraw() {
-		withDraw.clickWithdraw();
+		newvacationpage.clickWithdraw();
 	}
 
 	@Step
 	public void goEdit() {
-		editbutton.clickEdit();
+		newvacationpage.clickEdit();
 	}
 	
 	@Step
 	public void selectStartD(int month, int day, int year)throws ParseException {
-		newVacationRequestPage.clickStartDate();
-		newVacationRequestPage.setDate(month, day, year);
+		newvacationpage.clickStartDate();
+		newvacationpage.setDate(month, day, year);
 
 	}
     
 	@Step
 	public void selectEndD(int month, int day, int year)throws ParseException {
-		newVacationRequestPage.clickEndDate();
-		newVacationRequestPage.setDate(month, day, year);
+		newvacationpage.clickEndDate();
+		newvacationpage.setDate(month, day, year);
 
 	}
 	

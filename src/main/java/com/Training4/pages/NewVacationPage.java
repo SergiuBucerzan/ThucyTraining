@@ -155,7 +155,7 @@ public class NewVacationPage extends PageObject {
 			}
 		} while (cal.compareTo(calNew) != 0);
 
-		List<WebElement> days = getDriver().findElements( // By.cssSelector("div[aria-hidden='false'] .aui-calendar-day.aui-calendar-day-month.aui-state-default"));
+		List<WebElement> days = getDriver().findElements( 
 				By.cssSelector("div[style*='block'] td"));
 		for (WebElement currentDay : days) {
 			if (currentDay.getText().toLowerCase()

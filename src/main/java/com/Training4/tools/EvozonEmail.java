@@ -1,7 +1,6 @@
 package com.Training4.tools;
 
 public final class EvozonEmail {
-	//public static final String BASE_URL = "https://zimbra.evozon.com/?loginOp=logout";
 
 	public static final String DM_USEREMAIL = "sergiu.bucerzan@evozon.com";
 	public static final String DM_PASSEMAIL = "Evozon26.";

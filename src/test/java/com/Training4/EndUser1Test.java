@@ -50,24 +50,21 @@ public class EndUser1Test {
 	@Test
 	public void create_vacations() throws ParseException {
 
-	//	loginSteps.login_and_go_to_vacation(Constants.END_USER1,
-//			Constants.END_PASS1);
-	//	newVacationSteps.goToNewVacation();
-		
-	//	Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-//		newVacationRequestSteps.selectStartDate(5, 20, 2015);
-//		newVacationRequestSteps.selectEndDate(5, 20, 2015);
-//		newVacationSteps.goToSaveButton();
-//		newVacationSteps.get_content_t(); //verific state vacation request
-//	
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,Constants.END_PASS1);
+		newVacationSteps.goToNewVacation();
+		Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
+		newVacationRequestSteps.selectStartDate(5, 20, 2015);
+		newVacationRequestSteps.selectEndDate(5, 20, 2015);
+		newVacationSteps.goToSaveButton();
+		newVacationSteps.get_content_t(); //verific state vacation request
+	
 		numeEmail.selectName(EvozonEmail.END_USER1EMAIL, EvozonEmail.END_PASS1EMAIL,"Raluca","20/May/2015","20/May/2015");
 	}
 
 	// @Test
 	public void cancel_vacations() throws ParseException {
 
-		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
-				Constants.END_PASS1);
+		loginSteps.login_and_go_to_vacation(Constants.END_USER1,Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
 	    Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
 		newVacationRequestSteps.selectStartDate(1, 27, 2014);
@@ -82,8 +79,6 @@ public class EndUser1Test {
 		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
 				Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
-		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-
 		newVacationRequestSteps.selectStartDate(1, 22, 2014);
 		newVacationRequestSteps.selectEndDate(1, 22, 2014);
 		newVacationSteps.goVWithoutPayment();
@@ -97,8 +92,6 @@ public class EndUser1Test {
 		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
 				Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
-		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-
 		newVacationRequestSteps.selectStartDate(9, 22, 2014);
 		newVacationRequestSteps.selectEndDate(9, 22, 2014);
 		newVacationSteps.goSpecialVacation();
@@ -111,8 +104,6 @@ public class EndUser1Test {
 		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
 				Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
-		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
-
 		newVacationRequestSteps.selectStartDate(9, 22, 2014);
 		newVacationRequestSteps.selectEndDate(9, 22, 2014);
 		newVacationSteps.goSpecialVacation();
@@ -126,7 +117,6 @@ public class EndUser1Test {
 		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
 				Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
-		// Assert.assertEquals("Create a new vacation request",newVacationSteps.get_content_title());
 		newVacationRequestSteps.selectStartDate(9, 23, 2014);
 		newVacationRequestSteps.selectEndDate(9, 23, 2014);
 		newVacationSteps.goSickVacation();
@@ -139,7 +129,6 @@ public class EndUser1Test {
 		loginSteps.login_and_go_to_vacation(Constants.END_USER1,
 				Constants.END_PASS1);
 		newVacationSteps.goToNewVacation();
-	//	Assert.assertEquals("Create a new vacation request",	newVacationSteps.get_content_title());
 		newVacationRequestSteps.selectStartDate(10, 24, 2014);
 		newVacationRequestSteps.selectEndDate(10, 24, 2014);
 		newVacationSteps.addedComment();
